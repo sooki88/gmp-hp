@@ -1,0 +1,10 @@
+@use "../reset";
+@use "../_common" as common;
+
+.page {
+    @include common.page;
+  }
+  
+.page-content-container {
+    @include common.page-content-container;
+}

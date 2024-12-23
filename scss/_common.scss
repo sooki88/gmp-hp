@@ -1,0 +1,208 @@
+@use "./helper/color";
+
+@mixin toTablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// @mixin desktop {
+//   @media (min-width: 769px) {
+//     @content;
+//   }
+// }
+
+/**
+ page 레이아웃
+*/
+@mixin page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin page-content-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+
+    @include toTablet {
+        padding:0 24px;
+    }
+}
+
+@mixin footer {
+    width: 100%;
+
+}
+
+
+/**
+ 버튼 스타일
+*/
+@mixin button-basic {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: color.$primary70;
+    font-size: 16px;
+    font-weight: 500;
+    color: color.$white;
+
+    &:hover {
+        background-color: color.$primary20;
+        color: color.$primary80;
+    }
+
+    &:disabled {
+        background-color: color.$gray20;
+        color: color.$gray40;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+@mixin button-ghost {
+    background-color: transparent;
+    color: color.$primary70;
+
+    &:hover {
+        color: color.$primary70;
+        background-color: rgba(104, 50, 219, 0.05);
+    }
+}
+
+@mixin button-dark {
+    background-color: transparent;
+    color: color.$white;
+
+    &:hover {
+        color: color.$gray10;
+        background-color: rgba(255, 255, 255, 0.16);
+    }
+}
+
+@mixin button-outline {
+    border: solid 1px color.$white;
+}
+
+@mixin  button-unimportant {
+    background-color: color.$gray30;
+    color: color.$gray100;
+
+    &:hover {
+        background-color: color.$gray40;
+    }
+}
+
+/**
+ 체크박스 스타일
+*/
+@mixin main-check-box ($font-weight: 400, $check-box-img: '../../assets/images/check_box.png', $hover-color: $color-gray10 ) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-weight: $font-weight;
+  
+    input[type='checkbox'],
+    input[type='radio'] {
+      cursor: pointer;
+      width: 1.6rem;
+      appearance: none;
+      height: 1.6rem;
+    }
+  
+    input[type='checkbox']:before,
+    input[type='radio']:before {
+      content: "";
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+      background-image: url(#{$check-box-img});
+      background-size: 100% 100%;
+    }
+    input[type='checkbox']:checked:before,
+    input[type='radio']:checked:before {
+      background-image: url('../../assets/images/check_box_on.png');
+      background-size: 100% 100%;
+    }
+  
+    &:active > input[type='checkbox']:before,
+    &:active > input[type='radio']:before {
+      background-color: $color-gray30;
+      border-radius: 0.4rem;
+    }
+  
+    @media (hover: hover) {
+      &:hover > input[type='checkbox']:before,
+      &:hover > input[type='radio']:before {
+        background-color: $hover-color;
+      }
+    }
+  }
+  
+  /**
+   라디오버튼 스타일
+  */
+  @mixin radio-box() {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    cursor: pointer;
+  
+    input[type='radio'],
+    input[type='checkbox'] {
+      cursor: pointer;
+      width: 1.6rem;
+      height: 1.6rem;
+      appearance: none;
+      margin: 0;
+    }
+  
+    input[type='radio']:before,
+    input[type='checkbox']:before {
+      position: absolute;
+      left: 0;
+      content: "";
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+      background-image: url('../../assets/images/i_radio.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  
+    input[type='radio']:checked:before,
+    input[type='checkbox']:checked:before {
+      background-image: url('../../assets/images/i_radio_on.png');
+    }
+  
+    input[type='radio']:disabled,
+    input[type='checkbox']:disabled{
+      cursor: default;
+    }
+  
+    &:active > input[type='checkbox']:before,
+    &:active > input[type='radio']:before {
+      background-color: $color-gray10;
+      border-radius: 50%;
+    }
+  
+    @media (hover: hover) {
+      &:hover > input[type='checkbox']:before,
+      &:hover > input[type='radio']:before {
+        background-color: $color-gray10;
+        border-radius: 50%;
+      }
+    }
+  }
+  
+  
