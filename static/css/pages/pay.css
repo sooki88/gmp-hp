@@ -223,8 +223,8 @@ textarea::placeholder {
  체크박스 스타일
 */
 /**
- 라디오버튼 스타일
-*/
+   라디오버튼 스타일
+  */
 .page {
   display: flex;
   flex-direction: column;
@@ -238,6 +238,7 @@ textarea::placeholder {
   flex-direction: column;
   width: 100%;
   max-width: 1050px;
+  height: 100%;
   margin: 0 auto;
 }
 @media (max-width: 768px) {

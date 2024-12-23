@@ -15,6 +15,7 @@
   height: 70px;
   padding: 0 24px;
   line-height: 24px;
+  z-index: 100;
 
   @include common.toTablet {
     min-width: 100%;

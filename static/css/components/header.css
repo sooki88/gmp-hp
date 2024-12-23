@@ -223,8 +223,8 @@ textarea::placeholder {
  체크박스 스타일
 */
 /**
- 라디오버튼 스타일
-*/
+   라디오버튼 스타일
+  */
 .header {
   position: fixed;
   top: 0;
@@ -238,6 +238,7 @@ textarea::placeholder {
   height: 70px;
   padding: 0 24px;
   line-height: 24px;
+  z-index: 100;
 }
 @media (max-width: 768px) {
   .header {
