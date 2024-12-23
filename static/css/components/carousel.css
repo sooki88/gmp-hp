@@ -229,11 +229,8 @@ textarea::placeholder {
   display: block;
   width: 100%;
   height: 100vh;
-}
-
-.wrap {
-  position: relative;
-  width: 100%;
+  min-height: 570px;
+  overflow: hidden;
 }
 
 .slide {
@@ -247,7 +244,8 @@ textarea::placeholder {
   align-items: center;
   gap: 56px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: inherit;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -255,23 +253,41 @@ textarea::placeholder {
   background-size: cover;
   background-position: center;
 }
+@media (max-width: 768px) {
+  .slide {
+    justify-content: start;
+    padding-top: 162px;
+    background-size: auto 70vh;
+    background-position: bottom center;
+  }
+}
 .slide.banner1 {
   background-image: url("../../images/mb-export1.png");
+  background-color: #FFFDF0;
 }
 .slide.banner2 {
   background-image: url("../../images/mb-export2.png");
+  background-color: #F3F0FF;
 }
 .slide.banner3 {
   background-image: url("../../images/mb-export3.png");
+  background-color: #DCF9FF;
 }
 .slide.banner4 {
   background-image: url("../../images/mb-export4.png");
+  background-color: #F2F7FF;
 }
 .slide .slide-text-app {
   display: flex;
   flex-direction: column;
   gap: 56px;
   width: 1050px;
+}
+@media (max-width: 768px) {
+  .slide .slide-text-app {
+    width: 100%;
+    padding: 0 24px;
+  }
 }
 .slide .slide-text-app .text {
   font-size: 52px;
@@ -280,6 +296,12 @@ textarea::placeholder {
   letter-spacing: -2.5px;
   color: #000;
 }
+@media (max-width: 768px) {
+  .slide .slide-text-app .text {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+}
 .slide .slide-text-app .text p {
   font-size: 20px;
   font-weight: 400;
@@ -287,9 +309,21 @@ textarea::placeholder {
   letter-spacing: -0.5px;
   margin-top: 24px;
 }
+@media (max-width: 768px) {
+  .slide .slide-text-app .text p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 .slide .slide-text-app .app-button-container {
   display: flex;
+  flex-direction: row;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  .slide .slide-text-app .app-button-container {
+    flex-direction: column;
+  }
 }
 .slide .slide-text-app .app-button-container a {
   display: flex;
@@ -300,9 +334,22 @@ textarea::placeholder {
   border-radius: 30px;
   background-color: #000;
 }
+@media (max-width: 768px) {
+  .slide .slide-text-app .app-button-container a {
+    width: 142px;
+    height: 52px;
+    border-radius: 26px;
+  }
+}
 .slide .slide-text-app .app-button-container a img {
   width: 119px;
   height: 34px;
+}
+@media (max-width: 768px) {
+  .slide .slide-text-app .app-button-container a img {
+    width: 103px;
+    height: 28px;
+  }
 }
 .slide .slide-text-app .app-button-container a img:hover {
   opacity: 80%;
@@ -340,6 +387,11 @@ textarea::placeholder {
   background-color: #fff;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
 }
+@media (max-width: 768px) {
+  .indicator-container .bar {
+    display: none;
+  }
+}
 .indicator-container .now {
   background-color: #6832db;
 }
@@ -365,6 +417,15 @@ textarea::placeholder {
   height: 24px;
   padding-left: 1px;
   cursor: pointer;
+}
+
+.only-mobile {
+  display: none;
+}
+@media (max-width: 360px) {
+  .only-mobile {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=carousel.css.map */

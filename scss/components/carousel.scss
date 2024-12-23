@@ -6,11 +6,8 @@
   display: block;
   width: 100%;
   height: 100vh;
-}
-
-.wrap {
-  position: relative;
-  width: 100%;
+  min-height: 570px;
+  overflow: hidden;
 }
 
 .slide {
@@ -24,7 +21,8 @@
   align-items: center;
   gap: 56px;
   width: 100%;
-  height: 100vh;
+  height: 100%; 
+  min-height: inherit; 
   z-index: 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -32,20 +30,31 @@
   background-size: cover;
   background-position: center;
 
+  @include common.toTablet {
+    justify-content: start;
+    padding-top: 162px;
+    background-size: auto 70vh; 
+    background-position: bottom center; 
+  }
+
   &.banner1 {
     background-image: url("../../images/mb-export1.png");
+    background-color: #FFFDF0;
   }
 
   &.banner2 {
     background-image: url("../../images/mb-export2.png");
+    background-color: #F3F0FF;
   }
 
   &.banner3 {
     background-image: url("../../images/mb-export3.png");
+    background-color: #DCF9FF;
   }
 
   &.banner4 {
     background-image: url("../../images/mb-export4.png");
+    background-color: #F2F7FF;
   }
 
   .slide-text-app {
@@ -54,6 +63,11 @@
     gap: 56px;
     width: 1050px;
 
+    @include common.toTablet {
+      width: 100%;
+      padding: 0 24px;
+    }
+
     .text {
       font-size: 52px;
       font-weight: 700;
@@ -61,18 +75,33 @@
       letter-spacing: -2.5px;
       color: color.$black;
 
+      @include common.toTablet {
+        font-size: 36px;
+        letter-spacing: -1.5px;
+      }
+
       p {
         font-size: 20px;
         font-weight: 400;
         line-height: 30px;
         letter-spacing: -0.5px;
         margin-top: 24px;
+
+        @include common.toTablet {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
     }
 
     .app-button-container {
       display: flex;
+      flex-direction: row;
       gap: 20px;
+
+      @include common.toTablet {
+        flex-direction: column;
+      }
 
       a {
         display: flex;
@@ -83,9 +112,20 @@
         border-radius: 30px;
         background-color: color.$black;
 
+        @include common.toTablet {
+          width: 142px;
+          height: 52px;
+          border-radius: 26px;
+        }
+
         img {
           width: 119px;
           height: 34px;
+
+          @include common.toTablet {
+            width: 103px;
+            height: 28px;
+          }
 
           &:hover {
             opacity: 80%;
@@ -126,6 +166,10 @@
     border-radius: 2px;
     background-color: color.$white;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+
+    @include common.toTablet {
+      display: none;
+    }
   }
 
   .now {
@@ -157,5 +201,13 @@
       padding-left: 1px;
       cursor: pointer;
     }
+  }
+}
+
+.only-mobile {
+  display: none;
+
+  @include common.mobile {
+    display: block;
   }
 }
