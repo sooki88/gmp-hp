@@ -63,7 +63,8 @@
     gap: 56px;
     width: 1050px;
 
-    @include common.toTablet {
+    // @include common.toTablet {
+    @media (max-width: 1050px) {
       width: 100%;
       padding: 0 24px;
     }

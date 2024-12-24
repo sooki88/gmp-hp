@@ -23,7 +23,7 @@
       <main>
         <!-- 결제서비스 섹션 -->
         <section class="content-container content1">
-          <div class="section-title-arrow">
+          <div class="section-title-arrow content1">
             <h2>
               세상 <strong>모든 결제서비스</strong>를 <br />
               굿모닝페이 하나로!
@@ -33,7 +33,7 @@
               href=""
               alt="굿모닝페이 결제서비스 자세히 보기 버튼"></a>
           </div>
-          <div class="section-card section-pay">
+          <div class="section-img-pay">
             <a class="pay-card" href="">
               OFF-PG
               <div class="pay-card-img off-pg"></div>
@@ -59,13 +59,59 @@
 
         <hr class="line" />
 
-        <!-- 수수료 정산 섹션 -->
-        <section class="content-container"></section>
+        <!-- 수수료/정산 섹션 -->
+        <section class="content-container">
+          <div class="section-title-arrow content2">
+            <h2>
+              결제수수료는 <strong>더 낮게↘</strong><br />
+              정산은 <strong>더 빠르게 ↗</strong>
+            </h2>
+          </div>
+          <div class="section-img-charge">
+            <img
+              class="charge-img1"
+              src="./images/charge-credit.png"
+              alt="신용카드 수수료" />
+            <img
+              class="charge-img2"
+              src="./images/charge-trans.png"
+              alt="계좌이체 수수료" />
+            <img
+              class="charge-img3"
+              src="./images/charge-account.png"
+              alt="가상계좌 수수료" />
+            <img
+              class="charge-img4"
+              src="./images/charge-period.png"
+              alt="익일정산" />
+          </div>
+        </section>
+
+        <hr class="line" />
       </main>
     </div>
 
     <script src="./script/header.js"></script>
     <script src="./script/carousel.js"></script>
-    <script></script>
+    <script>
+      // 수수료/정산 섹션의 img 순서 자동 바꾸기
+      document.addEventListener("DOMContentLoaded", () => {
+        const images = [
+          document.querySelector(".charge-img1"),
+          document.querySelector(".charge-img2"),
+          document.querySelector(".charge-img3"),
+          document.querySelector(".charge-img4"),
+        ];
+
+        setInterval(() => {
+          const classNames = images.map((img) => img.className);
+
+          images.forEach((img, index) => {
+            img.className =
+              classNames[(index - 1 + classNames.length) % classNames.length];
+          });
+        }, 3000);
+      });
+    </script>
   </body>
 </html>

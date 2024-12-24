@@ -283,7 +283,7 @@ textarea::placeholder {
   gap: 56px;
   width: 1050px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
   .slide .slide-text-app {
     width: 100%;
     padding: 0 24px;

@@ -12,6 +12,13 @@
   }
 }
 
+// 헤더에만 적용되는 미디어쿼리
+@mixin toTabletForHeader {
+  @media (max-width: 1010px) {
+    @content;
+  }
+}
+
 // @mixin desktop {
 //   @media (min-width: 769px) {
 //     @content;
