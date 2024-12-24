@@ -233,7 +233,12 @@ textarea::placeholder {
   height: 100%;
 }
 
-.page-content-container {
+main {
+  width: 100%;
+}
+
+.content-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -242,9 +247,202 @@ textarea::placeholder {
   margin: 0 auto;
 }
 @media (max-width: 768px) {
-  .page-content-container {
+  .content-container {
     padding: 0 24px;
   }
+}
+.content-container {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 140px 0;
+  height: fit-content;
+}
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    padding: 100px 24px;
+    gap: 64px;
+  }
+}
+.content-container.content1 {
+  padding-top: 200px;
+}
+@media (max-width: 768px) {
+  .content-container.content1 {
+    padding-top: 100px;
+  }
+}
+.content-container .section-title-arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .content-container .section-title-arrow {
+    justify-content: start;
+    gap: 20px;
+  }
+}
+.content-container .section-title-arrow h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 150%;
+}
+@media (max-width: 768px) {
+  .content-container .section-title-arrow h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+}
+.content-container .section-title-arrow h2 strong {
+  font-weight: inherit;
+  color: #6832db;
+}
+.content-container .section-title-arrow .page-arrow {
+  width: 64px;
+  height: 64px;
+  background-image: url("../images/page-arrow-default.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+.content-container .section-title-arrow .page-arrow:hover {
+  background-image: url("../images/page-arrow-hover.svg");
+}
+@media (max-width: 768px) {
+  .content-container .section-title-arrow .page-arrow {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.section-card {
+  flex-shrink: 0;
+}
+.section-card.section-pay {
+  display: flex;
+  justify-content: end;
+  gap: 24px;
+  flex-wrap: wrap;
+  width: 783px;
+}
+.section-card.section-pay a:nth-child(1) {
+  margin-left: 269px;
+}
+@media (max-width: 768px) {
+  .section-card.section-pay a:nth-child(1) {
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .section-card.section-pay {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    width: 100%;
+  }
+}
+
+.pay-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 245px;
+  height: 245px;
+  padding: 40px 16px 16px 40px;
+  border-radius: 20px;
+  background-color: #f5f7fa;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .pay-card {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 104px;
+    padding: 0 24px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+}
+.pay-card:hover {
+  background-color: #6832db;
+  box-shadow: 16px 16px 8px 0px rgba(79, 57, 123, 0.08);
+  color: #fff;
+  text-decoration-line: underline;
+  text-underline-offset: 6px;
+  transition: all 0.3s ease;
+}
+.pay-card:hover .off-pg {
+  background-image: url("../images/off-pg.gif");
+}
+.pay-card:hover .elect {
+  background-image: url("../images/elect.gif");
+}
+.pay-card:hover .handwrite {
+  background-image: url("../images/handwrite.gif");
+}
+.pay-card:hover .regular {
+  background-image: url("../images/regular.gif");
+}
+.pay-card:hover .sns {
+  background-image: url("../images/sns.gif");
+}
+.pay-card .pay-card-img {
+  width: 189px;
+  height: 145px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  .pay-card .pay-card-img {
+    width: 115px;
+    height: 88px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+.pay-card .off-pg {
+  background-image: url("../images/off-pg.png");
+}
+.pay-card .elect {
+  background-image: url("../images/elect.png");
+}
+.pay-card .handwrite {
+  background-image: url("../images/handwrite.png");
+}
+@media (max-width: 768px) {
+  .pay-card .handwrite {
+    margin-bottom: 12px;
+  }
+}
+.pay-card .regular {
+  background-image: url("../images/regular.png");
+}
+@media (max-width: 768px) {
+  .pay-card .regular {
+    margin-bottom: 16px;
+  }
+}
+.pay-card .sns {
+  background-image: url("../images/sns.png");
+}
+@media (max-width: 768px) {
+  .pay-card .sns {
+    margin-bottom: 16px;
+  }
+}
+
+.line {
+  border: none;
+  height: 24px;
+  background-color: #f5f7fa;
 }
 
 /*# sourceMappingURL=index.css.map */

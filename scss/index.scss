@@ -1,5 +1,6 @@
-@use "_reset";
-@use "_common" as common;
+@use "./_reset";
+@use "./common" as common;
+@use "./helper/color";
 
 // html {
 //   font-family: 'Pretendard';
@@ -22,6 +23,210 @@
   @include common.page;
 }
 
-.page-content-container {
-  @include common.page-content-container;
+main {
+  width: 100%;
+}
+
+.content-container {
+  @include common.content-container;
+
+  & {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 140px 0;
+    height: fit-content;
+
+    @include common.toTablet {
+      flex-direction: column;
+      padding: 100px 24px;
+      gap: 64px;
+    }
+  }
+
+  &.content1 {
+    padding-top: 200px;
+
+    @include common.toTablet {
+      padding-top: 100px;
+    }
+  }
+
+  .section-title-arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+
+    @include common.toTablet {
+      justify-content: start;
+      gap: 20px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 150%;
+
+      @include common.toTablet {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 140%;
+      }
+
+      strong {
+        font-weight: inherit;
+        color: color.$primary70;
+      }
+    }
+
+    .page-arrow {
+      width: 64px;
+      height: 64px;
+      background-image: url("../images/page-arrow-default.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-image: url("../images/page-arrow-hover.svg");
+      }
+
+      @include common.toTablet {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+}
+
+.section-card {
+  flex-shrink: 0;
+
+  &.section-pay {
+    display: flex;
+    justify-content: end;
+    gap: 24px;
+    flex-wrap: wrap;
+    width: 783px;
+
+    a:nth-child(1) {
+      margin-left: 269px;
+
+      @include common.toTablet {
+        margin: 0;
+      }
+    }
+
+    @include common.toTablet {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 16px;
+      width: 100%;
+    }
+  }
+}
+
+.pay-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 245px;
+  height: 245px;
+  padding: 40px 16px 16px 40px;
+  border-radius: 20px;
+  background-color: color.$gray10;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+
+  @include common.toTablet {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 104px;
+    padding: 0 24px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    background-color: color.$primary70;
+    box-shadow: 16px 16px 8px 0px rgba(79, 57, 123, 0.08);
+    color: color.$white;
+    text-decoration-line: underline;
+    text-underline-offset: 6px;
+    transition: all 0.3s ease;
+
+    .off-pg {
+      background-image: url("../images/off-pg.gif");
+    }
+
+    .elect {
+      background-image: url("../images/elect.gif");
+    }
+
+    .handwrite {
+      background-image: url("../images/handwrite.gif");
+    }
+
+    .regular {
+      background-image: url("../images/regular.gif");
+    }
+
+    .sns {
+      background-image: url("../images/sns.gif");
+    }
+  }
+
+  .pay-card-img {
+    width: 189px;
+    height: 145px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include common.toTablet {
+      width: 115px;
+      height: 88px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .off-pg {
+    background-image: url("../images/off-pg.png");
+  }
+
+  .elect {
+    background-image: url("../images/elect.png");
+  }
+
+  .handwrite {
+    background-image: url("../images/handwrite.png");
+
+    @include common.toTablet {
+      margin-bottom: 12px;
+    }
+  }
+
+  .regular {
+    background-image: url("../images/regular.png");
+    @include common.toTablet {
+      margin-bottom: 16px;
+    }
+  }
+
+  .sns {
+    background-image: url("../images/sns.png");
+    @include common.toTablet {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.line {
+  border: none;
+  height: 24px;
+  background-color: color.$gray10;
 }

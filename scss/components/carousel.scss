@@ -21,8 +21,8 @@
   align-items: center;
   gap: 56px;
   width: 100%;
-  height: 100%; 
-  min-height: inherit; 
+  height: 100%;
+  min-height: inherit;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -33,28 +33,28 @@
   @include common.toTablet {
     justify-content: start;
     padding-top: 162px;
-    background-size: auto 70vh; 
-    background-position: bottom center; 
+    background-size: auto 70vh;
+    background-position: bottom center;
   }
 
   &.banner1 {
     background-image: url("../../images/mb-export1.png");
-    background-color: #FFFDF0;
+    background-color: #fffdf0;
   }
 
   &.banner2 {
     background-image: url("../../images/mb-export2.png");
-    background-color: #F3F0FF;
+    background-color: #f3f0ff;
   }
 
   &.banner3 {
     background-image: url("../../images/mb-export3.png");
-    background-color: #DCF9FF;
+    background-color: #dcf9ff;
   }
 
   &.banner4 {
     background-image: url("../../images/mb-export4.png");
-    background-color: #F2F7FF;
+    background-color: #f2f7ff;
   }
 
   .slide-text-app {
@@ -147,7 +147,7 @@
 }
 
 .indicator-container {
-  position: fixed;
+  position: absolute;
   bottom: 80px;
   right: 64px;
   height: 32px;

@@ -263,19 +263,19 @@ textarea::placeholder {
 }
 .slide.banner1 {
   background-image: url("../../images/mb-export1.png");
-  background-color: #FFFDF0;
+  background-color: #fffdf0;
 }
 .slide.banner2 {
   background-image: url("../../images/mb-export2.png");
-  background-color: #F3F0FF;
+  background-color: #f3f0ff;
 }
 .slide.banner3 {
   background-image: url("../../images/mb-export3.png");
-  background-color: #DCF9FF;
+  background-color: #dcf9ff;
 }
 .slide.banner4 {
   background-image: url("../../images/mb-export4.png");
-  background-color: #F2F7FF;
+  background-color: #f2f7ff;
 }
 .slide .slide-text-app {
   display: flex;
@@ -367,7 +367,7 @@ textarea::placeholder {
 }
 
 .indicator-container {
-  position: fixed;
+  position: absolute;
   bottom: 80px;
   right: 64px;
   height: 32px;
