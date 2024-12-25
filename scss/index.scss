@@ -246,11 +246,10 @@ main {
   height: 513px;
 
   @include common.toTablet {
+    display: flex;
+    gap: 24px;
     width: 100%;
-    max-width: 530px;
-    max-height: 530px;
-    aspect-ratio: 1 / 1;
-    height: auto;
+    height: 312px;
     overflow: hidden;
   }
 
@@ -261,9 +260,9 @@ main {
     border-radius: 24px;
 
     @include common.toTablet {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
+      width: 312px;
+      height: 312px;
+      // aspect-ratio: 1 / 1;
     }
   }
 
@@ -324,6 +323,35 @@ main {
   }
   100% {
     left: 1074px;
+  }
+}
+
+@include common.toTablet {  
+  @keyframes moveFirst {
+    0% {
+      left: 328px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  
+  @keyframes moveSecond {
+    0% {
+      left: 656px;
+    }
+    100% {
+      left: 328px;
+    }
+  }
+  
+  @keyframes moveThird {
+    0% {
+      left: 984px;
+    }
+    100% {
+      left: 656px;
+    }
   }
 }
 
