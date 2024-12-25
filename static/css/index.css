@@ -533,5 +533,122 @@ main {
     left: 1074px;
   }
 }
+.section-img-join {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 24px;
+  width: 513px;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .section-img-join {
+    width: 100%;
+    gap: 16px;
+  }
+}
+.section-img-join div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  border-radius: 20px;
+  background-color: #f1f4fb;
+  padding: 28px 40px;
+  transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .section-img-join div {
+    padding: 24px;
+    border-radius: 12px;
+  }
+}
+.section-img-join div .step-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 16px;
+  line-height: 150%;
+  color: #a1acbf;
+  transition: color 0.5s ease-in-out;
+}
+@media (max-width: 768px) {
+  .section-img-join div .step-title {
+    font-size: 14px;
+  }
+}
+.section-img-join div .step-title h2 {
+  color: #a1acbf;
+  transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+}
+.section-img-join div.step-now {
+  height: 180px;
+  margin-left: -90px;
+  color: #fff;
+}
+.section-img-join div.step-now:nth-child(1) {
+  background-color: #AA82FF;
+}
+.section-img-join div.step-now:nth-child(2) {
+  background-color: #8651F9;
+}
+.section-img-join div.step-now:nth-child(3) {
+  background-color: #6A2CF0;
+}
+.section-img-join div.step-now:nth-child(4) {
+  background-color: #3E0DA5;
+}
+@media (max-width: 768px) {
+  .section-img-join div.step-now {
+    height: 180px;
+    margin-left: 0;
+    align-items: start;
+    justify-content: start;
+  }
+}
+.section-img-join div.step-now .step-title {
+  gap: 32px;
+  color: #fff;
+}
+.section-img-join div.step-now .step-title h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 140%;
+  color: #fff;
+  flex-grow: 1;
+}
+@media (max-width: 768px) {
+  .section-img-join div.step-now .step-title h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .section-img-join div.step-now .step-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 12px;
+  }
+}
+.section-img-join div.step-now img {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+}
+@media (max-width: 768px) {
+  .section-img-join div.step-now img {
+    position: absolute;
+    right: 40px;
+    bottom: 28px;
+    width: 56px;
+    height: 56px;
+  }
+}
+.section-img-join div img {
+  display: none;
+}
 
 /*# sourceMappingURL=index.css.map */

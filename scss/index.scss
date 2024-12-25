@@ -158,7 +158,7 @@ main {
     padding: 0 24px;
     border-radius: 12px;
     font-size: 20px;
-  }
+  } 
 
   &:hover {
     background-color: color.$primary70;
@@ -324,5 +324,128 @@ main {
   }
   100% {
     left: 1074px;
+  }
+}
+
+.section-img-join {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 24px;
+  width: 513px;
+  height: 100%;
+
+  @include common.toTablet {
+    width: 100%;
+    gap: 16px;
+  }
+
+  div {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    border-radius: 20px;
+    background-color: color.$gray20;
+    padding: 28px 40px;
+    transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+
+    @include common.toTablet {
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .step-title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-size: 16px;
+      line-height: 150%;
+      color: color.$gray50;
+      transition: color 0.5s ease-in-out;
+
+      @include common.toTablet {
+        font-size: 14px;
+      }
+
+      h2{
+        color: color.$gray50;
+        transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+      }
+    }
+
+    &.step-now {
+      height: 180px;
+      margin-left: -90px;
+      color: color.$white;
+
+      &:nth-child(1) {
+        background-color: #AA82FF;
+      }
+
+      &:nth-child(2) {
+        background-color: #8651F9;
+      }
+
+      &:nth-child(3) {
+        background-color: #6A2CF0;
+      }
+
+      &:nth-child(4) {
+        background-color: #3E0DA5;
+      }
+
+      @include common.toTablet {
+        height: 180px;
+        margin-left:0;
+        align-items: start;
+        justify-content: start;
+      }
+      
+      .step-title{
+        gap: 32px;
+        color: color.$white;
+
+        h2 {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 140%;
+          color: color.$white;
+          flex-grow: 1;
+
+          @include common.toTablet {
+            font-size: 20px;
+          }
+        }
+
+        @include common.toTablet {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: start;
+          gap: 12px;
+        }
+      }
+
+      img {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+
+        @include common.toTablet {
+          position: absolute;
+          right: 40px;
+          bottom: 28px;
+          width: 56px;
+          height: 56px;
+        }
+      }
+    }
+
+    img {
+      display: none;
+    }
   }
 }

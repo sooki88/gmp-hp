@@ -88,6 +88,51 @@
         </section>
 
         <hr class="line" />
+
+        <!-- 가맹점 가입 섹션 -->
+        <section class="content-container">
+          <div class="section-title-arrow">
+            <h2>
+              성공의 시작은<br />
+              <strong>초간단 가맹점 가입!</strong>
+            </h2>
+            <a
+              class="page-arrow"
+              href=""
+              alt="가맹점 가입 자세히 보기 버튼"></a>
+          </div>
+          <div class="section-img-join">
+            <div class="step-now">
+              <span class="step-title">
+                STEP 1
+                <h2>서비스 신청 접수<br />(지역별 대리점)</h2>
+              </span>
+              <img src="./images/i-headphone.svg" alt="대리점 전화상담 아이콘" />
+            </div>
+            <div>
+              <span class="step-title">
+                STEP 2
+                <h2>대리점 상담/심사</h2>
+              </span>
+              <img src="./images/i-check-circle.svg" alt="체크 된 원 아이콘" />
+            </div>
+            <div>
+              <span class="step-title">
+                STEP 3
+                <h2>굿모닝페이 앱 설치</h2>
+              </span>
+              <img src="./images/i-cube.svg" alt="api 아이콘" />
+            </div>
+            <div>
+              <span class="step-title">
+                STEP 4
+                <h2>서비스 이용 시작</h2>
+              </span>
+              <img src="./images/i-graph.svg" alt="상승 그래프 아이콘" />
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
 
@@ -112,6 +157,18 @@
           });
         }, 3000);
       });
+
+      // 가맹점 가입 섹션의 .step-now 클래스 2초마다 이동하기
+      document.addEventListener("DOMContentLoaded", () => {
+      const steps = document.querySelectorAll(".section-img-join > div");
+      let currentStep = 0;
+
+      setInterval(() => {
+        steps[currentStep].classList.remove('step-now');
+        currentStep = (currentStep + 1) % steps.length;
+        steps[currentStep].classList.add('step-now');
+      }, 2500); 
+    });
     </script>
   </body>
 </html>
