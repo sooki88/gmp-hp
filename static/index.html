@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/components/header.css" />
     <link rel="stylesheet" href="./css/components/carousel.css" />
+    <link rel="stylesheet" href="./css/components/footer.css" />
   </head>
   <body>
     <div class="page">
@@ -61,7 +62,7 @@
 
         <!-- 수수료/정산 섹션 -->
         <section class="content-container">
-          <div class="section-title-arrow content2">
+          <div class="section-title-arrow">
             <h2>
               결제수수료는 <strong>더 낮게↘</strong><br />
               정산은 <strong>더 빠르게 ↗</strong>
@@ -107,7 +108,9 @@
                 STEP 1
                 <h2>서비스 신청 접수<br />(지역별 대리점)</h2>
               </span>
-              <img src="./images/i-headphone.svg" alt="대리점 전화상담 아이콘" />
+              <img
+                src="./images/i-headphone.svg"
+                alt="대리점 전화상담 아이콘" />
             </div>
             <div>
               <span class="step-title">
@@ -133,7 +136,92 @@
           </div>
         </section>
 
+        <!-- 공지사항, FAQ 섹션 -->
+        <div class="section-bg">
+          <section class="content-container">
+            <div class="noti-faq-wrap">
+              <h2 class="noti-faq-title">
+                <img src="./images/campaign.svg" alt="공지사항 아이콘" />
+                공지사항
+              </h2>
+              <ul class="noti-faq-list">
+                <li>
+                  <a href=""
+                    >임시 공지사항1 2025년 카드사 무이자 할부 프로모션 이벤트
+                    안내안내안내안내안내</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    >임시 공지사항2 OFF-PG용 무선단말기 개통장려금 정책 공지</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    >임시 공지사항3 굿모닝페이 가맹점 정보 동의 제공 진행 불가의
+                    건</a
+                  >
+                </li>
+              </ul>
+              <a
+                class="page-arrow small"
+                href=""
+                alt="공지사항 더보기 버튼"></a>
+            </div>
+            <div class="noti-faq-wrap">
+              <h2 class="noti-faq-title">
+                <img src="./images/question.svg" alt="FAQ 아이콘" />
+                자주 묻는 질문
+              </h2>
+              <ul class="noti-faq-list">
+                <li>
+                  <a href="">임시 faq1 서류심사는 어떻게 진행되나요?</a>
+                </li>
+                <li>
+                  <a href=""
+                    >임시 faq2 굿모닝페이에 가입하려면 어떻게 해야하나요?</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    >임시 faq3 구매자에게 영수증은 어떻게 발급되나요?</a
+                  >
+                </li>
+              </ul>
+              <a
+                class="page-arrow small"
+                href=""
+                alt="자주 묻는 질문 더보기 버튼"></a>
+            </div>
+          </section>
+        </div>
+
+        <!-- 가입 안내 섹션 -->
+        <div class="section-contact-bg">
+          <!-- <section class="content-container"> -->
+          <h3>
+            Korea No.1<br />
+            O2O 통합 전자지급결제서비스<br />
+            <strong>굿모닝페이 지금 시작하세요!</strong>
+          </h3>
+          <ul class="contact-list">
+            <li>
+              <img src="./images/phone-3d.png" alt="전화 아이콘" />
+              <p class="phone">
+                1566-3588<span>평일 9:00~18:00 (점심시간 12:00~13:00)</span>
+              </p>
+            </li>
+            <li>
+              <img src="./images/email-3d.png" alt="이메일 아이콘" />
+              help@korea-payment.com
+            </li>
+          </ul>
+          <!-- </section> -->
+        </div>
       </main>
+
+      <!-- 푸터영역 -->
+      <div id="footer-area"></div>
     </div>
 
     <script src="./script/header.js"></script>
@@ -160,15 +248,16 @@
 
       // 가맹점 가입 섹션의 .step-now 클래스 2초마다 이동하기
       document.addEventListener("DOMContentLoaded", () => {
-      const steps = document.querySelectorAll(".section-img-join > div");
-      let currentStep = 0;
+        const steps = document.querySelectorAll(".section-img-join > div");
+        let currentStep = 0;
 
-      setInterval(() => {
-        steps[currentStep].classList.remove('step-now');
-        currentStep = (currentStep + 1) % steps.length;
-        steps[currentStep].classList.add('step-now');
-      }, 2500); 
-    });
+        setInterval(() => {
+          steps[currentStep].classList.remove("step-now");
+          currentStep = (currentStep + 1) % steps.length;
+          steps[currentStep].classList.add("step-now");
+        }, 2500);
+      });
     </script>
+    <script src="./script/footer.js"></script>
   </body>
 </html>

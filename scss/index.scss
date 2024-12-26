@@ -87,27 +87,38 @@ main {
         color: color.$primary70;
       }
     }
+  }
+}
 
-    .page-arrow {
-      width: 64px;
-      height: 64px;
-      background-image: url("../images/page-arrow-default.svg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      transition: all 0.3s ease;
+.page-arrow {
+  width: 64px;
+  height: 64px;
+  background-image: url("../images/page-arrow-default.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
 
-      &:hover {
-        background-image: url("../images/page-arrow-hover.svg");
-      }
+  &.small {
+    width: 40px;
+    height: 40px;
+  }
 
-      @include common.toTablet {
-        width: 48px;
-        height: 48px;
-      }
+  &:hover {
+    background-image: url("../images/page-arrow-hover.svg");
+  }
+
+  @include common.toTablet {
+    width: 48px;
+    height: 48px;
+
+    &.small {
+      width: 32px;
+      height: 32px;
     }
   }
 }
 
+// 결제서비스 섹션
 .section-img-pay {
   position: absolute;
   right: 0;
@@ -158,7 +169,7 @@ main {
     padding: 0 24px;
     border-radius: 12px;
     font-size: 20px;
-  } 
+  }
 
   &:hover {
     background-color: color.$primary70;
@@ -240,6 +251,7 @@ main {
   background-color: color.$gray10;
 }
 
+// 수수료/정산 섹션
 .section-img-charge {
   position: relative;
   width: 513px;
@@ -250,7 +262,7 @@ main {
     gap: 24px;
     width: 100%;
     height: 312px;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   img {
@@ -326,7 +338,7 @@ main {
   }
 }
 
-@include common.toTablet {  
+@include common.toTablet {
   @keyframes moveFirst {
     0% {
       left: 328px;
@@ -335,7 +347,7 @@ main {
       left: 0;
     }
   }
-  
+
   @keyframes moveSecond {
     0% {
       left: 656px;
@@ -344,7 +356,7 @@ main {
       left: 328px;
     }
   }
-  
+
   @keyframes moveThird {
     0% {
       left: 984px;
@@ -355,6 +367,7 @@ main {
   }
 }
 
+// 가맹점 가입 섹션
 .section-img-join {
   display: flex;
   flex-direction: column;
@@ -377,14 +390,15 @@ main {
     border-radius: 20px;
     background-color: color.$gray20;
     padding: 28px 40px;
-    transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out,
+      margin-left 0.3s ease-in-out;
 
     @include common.toTablet {
       padding: 24px;
       border-radius: 12px;
     }
 
-    .step-title{
+    .step-title {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -398,7 +412,7 @@ main {
         font-size: 14px;
       }
 
-      h2{
+      h2 {
         color: color.$gray50;
         transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
       }
@@ -410,29 +424,29 @@ main {
       color: color.$white;
 
       &:nth-child(1) {
-        background-color: #AA82FF;
+        background-color: #aa82ff;
       }
 
       &:nth-child(2) {
-        background-color: #8651F9;
+        background-color: #8651f9;
       }
 
       &:nth-child(3) {
-        background-color: #6A2CF0;
+        background-color: #6a2cf0;
       }
 
       &:nth-child(4) {
-        background-color: #3E0DA5;
+        background-color: #3e0da5;
       }
 
       @include common.toTablet {
         height: 180px;
-        margin-left:0;
+        margin-left: 0;
         align-items: start;
         justify-content: start;
       }
-      
-      .step-title{
+
+      .step-title {
         gap: 32px;
         color: color.$white;
 
@@ -476,4 +490,184 @@ main {
       display: none;
     }
   }
+}
+
+// 공지사항, FAQ 섹션
+.section-bg {
+  width: 100%;
+  background-color: color.$primary20;
+}
+
+.noti-faq-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 513px;
+  height: 100%;
+  gap: 24px;
+
+  @include common.toTablet {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .noti-faq-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 28px;
+    font-weight: 500;
+
+    @include common.toTablet {
+      font-size: 24px;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+
+      @include common.toTablet {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  .noti-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 40px;
+
+    @include common.toTablet {
+      padding-right: 0;
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 28px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @include common.toTablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+// 가입 안내 섹션
+.section-contact-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 140px 0;
+  background-image: url("../images/join-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  h3 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -1px;
+    color: color.$white;
+
+    @include common.toTablet {
+      font-size: 28px;
+      line-height: 140%;
+    }
+
+    strong {
+      font-weight: 500;
+      color: color.$white;
+    }
+  }
+}
+
+.contact-list {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1050px;
+
+  @include common.toTablet {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 118px;
+    gap: 16px;
+    background-color: rgba(75, 25, 178, 0.8);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: color.$white;
+    border-radius: 20px;
+
+    @include common.toTablet {
+      height: 88px;
+      gap: 8px;
+      font-size: 20px;
+      border-radius: 12px;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+
+      @include common.toTablet {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .phone {
+      display: flex;
+      flex-direction: column;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 140%;
+      letter-spacing: 0;
+      color: color.$white;
+
+      @include common.toTablet {
+        font-size: 24px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0;
+        color: color.$white;
+
+        @include common.toTablet {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+#footer-area {
+  width: 100%;
 }
