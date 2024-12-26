@@ -54,6 +54,43 @@
   width: 100%;
 }
 
+@mixin page-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: color.$gray10;
+  padding: 166px 0 96px;
+
+  @include toTablet {
+    padding: 126px 24px 64px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1050px;
+    font-size: 44px;
+    font-weight: 300;
+    line-height: 140%;
+    text-align: center;
+
+    @include toTablet {
+      flex-direction: column;
+      gap: 20px;
+      font-size: 36px;
+      line-height: 150%;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+}
+
 /**
  버튼 스타일
 */
@@ -63,11 +100,13 @@
   background-color: color.$primary70;
   font-size: 16px;
   font-weight: 500;
+  line-height: 24px;
   color: color.$white;
 
   &:hover {
     background-color: color.$primary20;
     color: color.$primary80;
+    box-shadow: 0px 4px 8px 0px #371c73;
   }
 
   &:disabled {
@@ -99,7 +138,7 @@
 }
 
 @mixin button-outline {
-  border: solid 1px color.$white;
+  border: solid 0.7px color.$white;
 }
 
 @mixin button-unimportant {

@@ -200,12 +200,6 @@ button {
   letter-spacing: -0.7px;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #999;
-  font-weight: 300;
-  letter-spacing: -0.7px;
-}
-
 input::placeholder,
 textarea::placeholder {
   color: #999;
@@ -259,7 +253,6 @@ textarea::placeholder {
   background-size: cover;
   background-position: center;
 }
-
 @media (max-width: 768px) {
   .slide {
     justify-content: start;
@@ -272,29 +265,24 @@ textarea::placeholder {
   background-image: url("../../images/mb-export1.png");
   background-color: #fffdf0;
 }
-
 .slide.banner2 {
   background-image: url("../../images/mb-export2.png");
   background-color: #f3f0ff;
 }
-
 .slide.banner3 {
   background-image: url("../../images/mb-export3.png");
   background-color: #dcf9ff;
 }
-
 .slide.banner4 {
   background-image: url("../../images/mb-export4.png");
   background-color: #f2f7ff;
 }
-
 .slide .slide-text-app {
   display: flex;
   flex-direction: column;
   gap: 56px;
   width: 1050px;
 }
-
 @media (max-width: 1050px) {
   .slide .slide-text-app {
     width: 100%;
@@ -308,7 +296,6 @@ textarea::placeholder {
   letter-spacing: -2.5px;
   color: #000;
 }
-
 @media (max-width: 768px) {
   .slide .slide-text-app .text {
     font-size: 36px;
@@ -322,7 +309,6 @@ textarea::placeholder {
   letter-spacing: -0.5px;
   margin-top: 24px;
 }
-
 @media (max-width: 768px) {
   .slide .slide-text-app .text p {
     font-size: 16px;
@@ -334,7 +320,6 @@ textarea::placeholder {
   flex-direction: row;
   gap: 20px;
 }
-
 @media (max-width: 768px) {
   .slide .slide-text-app .app-button-container {
     flex-direction: column;
@@ -349,7 +334,6 @@ textarea::placeholder {
   border-radius: 30px;
   background-color: #000;
 }
-
 @media (max-width: 768px) {
   .slide .slide-text-app .app-button-container a {
     width: 142px;
@@ -361,7 +345,6 @@ textarea::placeholder {
   width: 119px;
   height: 34px;
 }
-
 @media (max-width: 768px) {
   .slide .slide-text-app .app-button-container a img {
     width: 103px;
@@ -395,7 +378,6 @@ textarea::placeholder {
   text-align: right;
   z-index: 10;
 }
-
 .indicator-container .bar {
   display: inline-block;
   margin: 0 1px;
@@ -405,7 +387,6 @@ textarea::placeholder {
   background-color: #fff;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
 }
-
 @media (max-width: 768px) {
   .indicator-container .bar {
     display: none;
@@ -414,7 +395,6 @@ textarea::placeholder {
 .indicator-container .now {
   background-color: #6832db;
 }
-
 .indicator-container a {
   display: flex;
   align-items: center;
@@ -423,18 +403,15 @@ textarea::placeholder {
   height: 32px;
   border-radius: 50%;
 }
-
 .indicator-container a:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-
 .indicator-container a .btn-left {
   width: 24px;
   height: 24px;
   padding-right: 1px;
   cursor: pointer;
 }
-
 .indicator-container a .btn-right {
   width: 24px;
   height: 24px;
@@ -445,11 +422,10 @@ textarea::placeholder {
 .only-mobile {
   display: none;
 }
-
 @media (max-width: 360px) {
   .only-mobile {
     display: block;
   }
-} 
+}
 
 /*# sourceMappingURL=carousel.css.map */

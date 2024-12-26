@@ -11,16 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const loginButtons = document.querySelectorAll(
         ".button-container button"
       );
-      const menuButton = document.querySelector(".menus");
+      const menuButton = document.querySelector(".menus img");
       const currentPath = window.location.pathname;
 
-      const lightPaths = ["/", "/brand", "/partnership", "/api"];
-      const darkPaths = ["/pay", "/support"];
+      const lightPaths = ["/", "/partnership", "/api"];
+      const darkPaths = ["/brand", "/pay", "/support"];
 
       const setHeaderStyle = (path, isScrolled) => {
         // 현재 페이지가 ligthPath일 경우
         if (lightPaths.some((lightPath) => path === lightPath)) {
           header.style.backgroundColor = isScrolled ? "white" : "transparent";
+          header.style.borderBottom = isScrolled ? "1px solid #E5EAF2" : "none";
           navLinks.forEach((link) => {
             link.classList.add("light");
             link.classList.remove("dark");
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // 현재 페이지가 darkPath일 경우
         } else if (darkPaths.some((darkPath) => path === darkPath)) {
-          header.style.backgroundColor = isScrolled ? "black" : "transparent";
+          header.style.backgroundColor = isScrolled ? "#4B19B2" : "transparent";
           navLinks.forEach((link) => {
             link.classList.add("dark");
             link.classList.remove("light");
