@@ -34,12 +34,10 @@ main {
   & {
     flex-direction: row;
     justify-content: space-between;
-    padding: 140px 0;
     height: fit-content;
 
     @include common.toTablet {
       flex-direction: column;
-      padding: 100px 24px;
       gap: 64px;
     }
   }

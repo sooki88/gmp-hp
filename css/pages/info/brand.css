@@ -225,6 +225,9 @@ textarea::placeholder {
 /**
    라디오버튼 스타일
   */
+/**
+   테이블 스타일
+  */
 .page-title-container {
   display: flex;
   flex-direction: column;
@@ -242,6 +245,7 @@ textarea::placeholder {
 .page-title-container div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 1050px;
   font-size: 44px;
@@ -288,24 +292,21 @@ textarea::placeholder {
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 140px;
   width: 100%;
   max-width: 1050px;
   height: 100%;
   margin: 0 auto;
-}
-@media (max-width: 768px) {
-  .content-container {
-    padding: 0 24px;
-  }
-}
-.content-container {
   padding: 140px 0;
-  gap: 140px;
 }
 @media (max-width: 768px) {
   .content-container {
     padding: 100px 24px;
+    gap: 100px;
   }
+}
+.content-container {
+  gap: 140px;
 }
 
 .brand-section {

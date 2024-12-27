@@ -225,6 +225,9 @@ textarea::placeholder {
 /**
    라디오버튼 스타일
   */
+/**
+   테이블 스타일
+  */
 .page {
   display: flex;
   flex-direction: column;
@@ -237,14 +240,17 @@ textarea::placeholder {
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 140px;
   width: 100%;
   max-width: 1050px;
   height: 100%;
   margin: 0 auto;
+  padding: 140px 0;
 }
 @media (max-width: 768px) {
   .page-content-container {
-    padding: 0 24px;
+    padding: 100px 24px;
+    gap: 100px;
   }
 }
 

@@ -225,6 +225,9 @@ textarea::placeholder {
 /**
    라디오버튼 스타일
   */
+/**
+   테이블 스타일
+  */
 footer {
   display: flex;
   justify-content: center;

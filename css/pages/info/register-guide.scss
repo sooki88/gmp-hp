@@ -1,0 +1,313 @@
+@use "../../reset";
+@use "../../common" as common;
+@use "../../helper/color";
+
+.page-title-container {
+  @include common.page-title-container;
+}
+
+.content-container {
+  @include common.content-container;
+}
+
+.section-container {
+  @include common.section-container;
+}
+
+.step-container {
+  display: flex;
+
+  @include common.toTablet {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.step-item {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 327px;
+  height: 271px;
+  padding-top: 43px;
+  padding-right: 50px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include common.toTablet {
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
+
+  &.step1 {
+    background-image: url("/images/regi-step1.svg");
+    z-index: 4;
+
+    @include common.toTablet {
+      background-image: none;
+      background-color: color.$primary20;
+    }
+  }
+
+  &.step2 {
+    background-image: url("/images/regi-step2.svg");
+    margin-left: -51px;
+    z-index: 3;
+
+    @include common.toTablet {
+      background-image: none;
+      background-color: color.$primary40;
+      margin-left: 0;
+    }
+
+    .step {
+      color: color.$primary80;
+
+      @include common.toTablet {
+        color: color.$primary70;
+      }
+    }
+
+    .step-title {
+      color: #000;
+    }
+
+    .step-desc {
+      color: #000;
+    }
+  }
+
+  &.step3 {
+    background-image: url("/images/regi-step3.svg");
+    margin-left: -51px;
+    z-index: 2;
+
+    @include common.toTablet {
+      background-image: none;
+      background-color: color.$primary70;
+      margin-left: 0;
+    }
+
+    .step {
+      color: color.$white;
+
+      @include common.toTablet {
+        color: color.$primary70;
+      }
+    }
+
+    .step-title {
+      color: color.$white;
+    }
+
+    .step-desc {
+      color: color.$white;
+    }
+  }
+
+  &.step4 {
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    background-color: color.$primary80;
+    margin-left: -51px;
+    padding-right: 0;
+
+    @include common.toTablet {
+      width: 100%;
+      height: 100%;
+      background-image: none;
+      background-color: color.$primary80;
+      margin-left: 0;
+    }
+
+    .step {
+      color: color.$white;
+
+      @include common.toTablet {
+        color: color.$primary70;
+      }
+    }
+
+    .step-title {
+      color: color.$white;
+    }
+
+    .step-desc {
+      color: color.$white;
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      width: 87px;
+      height: 90px;
+
+      @include common.toTablet {
+        right: 24px;
+      }
+
+      @media (max-width: 440px) {
+        position: relative;
+        width: 70px;
+        height: 72px;
+        margin-left: 24px;
+        margin-bottom: -32px;
+      }
+    }
+  }
+
+  .step {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 200%;
+    text-align: center;
+    color: color.$primary70;
+    margin-bottom: 3px;
+
+    @include common.toTablet {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: color.$white;
+      flex-shrink: 0;
+    }
+  }
+
+  .step-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: center;
+    color: color.$gray100;
+
+    @include common.toTablet {
+      align-items: start;
+      font-size: 18px;
+      text-align: left;
+      gap: 8px;
+      flex-grow: 1;
+    }
+
+    @include common.mobile {
+      flex-direction: column;
+      align-items: start;
+      font-size: 18px;
+      text-align: left;
+      flex-grow: 1;
+    }
+  }
+
+  .step-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 150%;
+    text-align: center;
+
+    @include common.toTablet {
+      gap: 4px;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    .cs-info {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 150%;
+      color: color.$gray80;
+    }
+  }
+
+  .join-button {
+    @include common.button-basic;
+    @include common.button-ghost;
+
+    & {
+      padding: 7px 16px;
+      width: 87px;
+      border: 1px solid color.$primary70;
+      margin-top: -10px;
+
+      &:hover {
+        background-color: rgba(104, 50, 219, 0.05);
+        color: color.$primary80;
+      }
+    }
+
+    @include common.toTablet {
+      position: absolute;
+      right: 24px;
+      top: 45%;
+    }
+
+    @media (max-width: 460px) {
+      position: relative;
+      right: 0;
+      top: 0;
+      margin-top: 2px;
+      z-index: 4;
+    }
+  }
+
+  .mobile-arrow {
+    display: none;
+
+    @include common.toTablet {
+      display: block;
+      position: absolute;
+      bottom: -33px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.only-pc {
+  display: block;
+
+  @include common.toTablet {
+    display: none;
+  }
+}
+
+.document-table {
+  @include common.table;
+
+  &.only-pc {
+    display: table;
+
+    @include common.toTablet {
+      display: none;
+    }
+  }
+
+  &.only-toTablet {
+    display: none;
+
+    @include common.toTablet {
+      display: table;
+      width: 100%;
+    }
+  }
+}

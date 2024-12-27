@@ -40,13 +40,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 140px;
   width: 100%;
   max-width: 1050px;
   height: 100%;
   margin: 0 auto;
+  padding: 140px 0;
 
   @include toTablet {
-    padding: 0 24px;
+    padding: 100px 24px;
+    gap: 100px;
   }
 }
 
@@ -70,6 +73,7 @@
   div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: 1050px;
     font-size: 44px;
@@ -91,6 +95,20 @@
   }
 }
 
+@mixin section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34px;
+    color: color.$gray100;
+  }
+}
+
 /**
  버튼 스타일
 */
@@ -106,7 +124,7 @@
   &:hover {
     background-color: color.$primary20;
     color: color.$primary80;
-    box-shadow: 0px 4px 8px 0px #371c73;
+    box-shadow: 0px 4px 8px 0px rgba(55, 28, 115, 0.16);
   }
 
   &:disabled {
@@ -257,6 +275,78 @@
     &:hover > input[type="radio"]:before {
       background-color: $color-gray10;
       border-radius: 50%;
+    }
+  }
+}
+
+/**
+   테이블 스타일
+  */
+@mixin table() {
+  width: 100%;
+  box-sizing: border-box;
+  border-collapse: collapse;
+
+  thead {
+    text-align: center;
+    background-color: color.$primary70;
+
+    tr {
+      height: 52px;
+
+      @include toTablet {
+        height: 48px;
+      }
+    }
+
+    th {
+      width: 50%;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 28px;
+      color: color.$white;
+      text-align: center;
+      vertical-align: middle;
+
+      @include toTablet {
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
+
+  tbody {
+    height: auto;
+
+    td {
+      padding: 16px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 17px;
+      line-height: 26px;
+      color: color.$black;
+      border-right: 1px solid color.$gray40;
+      border-bottom: 1px solid color.$primary70;
+
+      @include toTablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
     }
   }
 }
