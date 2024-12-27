@@ -228,6 +228,9 @@ textarea::placeholder {
 /**
    테이블 스타일
   */
+/**
+   탭 스타일
+  */
 .contact-banner {
   display: flex;
   flex-direction: column;

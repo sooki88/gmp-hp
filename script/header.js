@@ -14,7 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const menuButton = document.querySelector(".menus img");
       const currentPath = window.location.pathname;
 
-      const lightPaths = ["/", "/index.html", "/info/register-guide.html"];
+      const lightPaths = [
+        "/",
+        "/index.html",
+        "/info/register-guide.html",
+        "/info/client.html",
+      ];
       const darkPaths = ["/info/brand.html", "/pay", "/support"];
 
       const setHeaderStyle = (path, isScrolled) => {

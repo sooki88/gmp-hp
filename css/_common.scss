@@ -350,3 +350,53 @@
     }
   }
 }
+
+/**
+   탭 스타일
+  */
+@mixin tab-container() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0;
+  column-gap: 56px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid color.$gray30;
+
+  li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 17px 0;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 150%;
+    color: color.$gray60;
+    cursor: pointer;
+
+    @include toTablet {
+      padding: 16px 0;
+      font-size: 18px;
+    }
+
+    &.clicked {
+      font-weight: 500;
+      color: color.$primary70;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: color.$primary70;
+        border-radius: 2px;
+      }
+    }
+  }
+}
