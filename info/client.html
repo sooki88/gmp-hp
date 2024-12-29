@@ -38,46 +38,30 @@
     <!-- </div> -->
 
     <!-- 컨텐츠 영역 -->
-    <!-- <main class="content-container"> -->
     <main class="client-container">
+
       <div class="client-list-wrap">
-        <div class="client-list even">
-          <img src="/images/card1.jpg" alt="주요 카드사">
-          <img src="/images/card2.jpg" alt="주요 카드사">
-          <img src="/images/card3.jpg" alt="주요 카드사">
-          <img src="/images/card4.jpg" alt="주요 카드사">
-          <img src="/images/card5.jpg" alt="주요 카드사">
-          <img src="/images/card6.jpg" alt="주요 카드사">
-          <img src="/images/card7.jpg" alt="주요 카드사">
-          <img src="/images/card8.jpg" alt="주요 카드사">
-          <img src="/images/card1.jpg" alt="주요 카드사">
-          <img src="/images/card2.jpg" alt="주요 카드사">
-          <img src="/images/card3.jpg" alt="주요 카드사">
-          <img src="/images/card4.jpg" alt="주요 카드사">
-          <img src="/images/card5.jpg" alt="주요 카드사">
-          <img src="/images/card6.jpg" alt="주요 카드사">
-          <img src="/images/card7.jpg" alt="주요 카드사">
-          <img src="/images/card8.jpg" alt="주요 카드사">
+        <div class="client-list move-to-left">
+          <img class="client-item" src="/images/card1.jpg" alt="주요 카드사">
+          <img class="client-item" src="/images/card2.jpg" alt="주요 카드사">
+          <img class="client-item" src="/images/card3.jpg" alt="주요 카드사">
+          <img class="client-item" src="/images/card4.jpg" alt="주요 카드사">
+          <img class="client-item only-pc" src="/images/card1.jpg" alt="주요 카드사">
+          <img class="client-item only-pc" src="/images/card2.jpg" alt="주요 카드사">
+          <img class="client-item only-pc" src="/images/card3.jpg" alt="주요 카드사">
+          <img class="client-item only-pc" src="/images/card4.jpg" alt="주요 카드사">
         </div>
       </div>
       <div class="client-list-wrap">
-        <div class="client-list odd">
-          <img src="/images/card1.jpg" alt="주요 카드사">
-          <img src="/images/card2.jpg" alt="주요 카드사">
-          <img src="/images/card3.jpg" alt="주요 카드사">
-          <img src="/images/card4.jpg" alt="주요 카드사">
-          <img src="/images/card5.jpg" alt="주요 카드사">
-          <img src="/images/card6.jpg" alt="주요 카드사">
-          <img src="/images/card7.jpg" alt="주요 카드사">
-          <img src="/images/card8.jpg" alt="주요 카드사">
-          <img src="/images/card1.jpg" alt="주요 카드사">
-          <img src="/images/card2.jpg" alt="주요 카드사">
-          <img src="/images/card3.jpg" alt="주요 카드사">
-          <img src="/images/card4.jpg" alt="주요 카드사">
-          <img src="/images/card5.jpg" alt="주요 카드사">
-          <img src="/images/card6.jpg" alt="주요 카드사">
-          <img src="/images/card7.jpg" alt="주요 카드사">
-          <img src="/images/card8.jpg" alt="주요 카드사">
+        <div class="client-list move-to-right">
+          <img class="client-item item-right" src="/images/card5.jpg" alt="주요 카드사">
+          <img class="client-item item-right" src="/images/card6.jpg" alt="주요 카드사">
+          <img class="client-item item-right" src="/images/card7.jpg" alt="주요 카드사">
+          <img class="client-item item-right" src="/images/card8.jpg" alt="주요 카드사">
+          <img class="client-item item-right only-pc" src="/images/card5.jpg" alt="주요 카드사">
+          <img class="client-item item-right only-pc" src="/images/card6.jpg" alt="주요 카드사">
+          <img class="client-item item-right only-pc" src="/images/card7.jpg" alt="주요 카드사">
+          <img class="client-item item-right only-pc" src="/images/card8.jpg" alt="주요 카드사">
         </div>
       </div>
 
@@ -89,6 +73,77 @@
     <div id="footer-area"></div>
 
     <script src="/script/header.js"></script>
+
+    <!-- .client-list-wrap 고객사 로고 좌우 무한 이동 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let currentLeftValue = 0;
+        let currentRightValue = 0;
+        let intervalLeft;
+        let intervalRight;
+
+        // 기존 interval 클리어 (interval이 가중되는 현상을 방지)
+        function clearIntervals() {
+          if (intervalLeft) clearInterval(intervalLeft);
+          if (intervalRight) clearInterval(intervalRight);
+        }
+    
+        function setupAnimation() {
+          const listWrap = document.querySelector(".client-list-wrap");
+          if (!listWrap) return;
+
+          clearIntervals();
+    
+          // 768px 이하에서는 애니메이션 중지
+          if (window.matchMedia("(max-width: 768px)").matches) {
+            if (intervalLeft) clearInterval(intervalLeft);
+            if (intervalRight) clearInterval(intervalRight);
+            return;
+          }
+    
+          // 왼쪽으로 무한 루프하는 함수
+          function animationLoopToLeft() {
+            const listToLeft = document.querySelector('.move-to-left');
+            const listWrapLeft = listWrap.getBoundingClientRect().left;
+            const firstItem = listToLeft.querySelector('.client-item:first-child');
+            let rightSideOfFirstItem = firstItem.getBoundingClientRect().right;
+    
+            if(rightSideOfFirstItem <= listWrapLeft) {
+              currentLeftValue = 15; // 갭 조정
+              listToLeft.appendChild(firstItem);
+            }
+    
+            listToLeft.style.marginLeft = `${currentLeftValue}px`;
+            currentLeftValue--;
+          }
+    
+          // 오른쪽으로 무한 루프하는 함수
+          function animationLoopToRight() {
+            const listWrapRight = listWrap.getBoundingClientRect().right;
+            const listReverse = document.querySelector('.move-to-right');
+            const lastItem = listReverse.querySelector('.item-right:last-child');
+            let leftSideOfLastItem = lastItem.getBoundingClientRect().left;
+    
+            if(leftSideOfLastItem >= listWrapRight) {
+              currentRightValue = -16; // 갭 조정
+              listReverse.insertBefore(lastItem, listReverse.firstChild);
+            }
+    
+            listReverse.style.marginLeft = `${currentRightValue}px`;
+            currentRightValue++;
+          }
+    
+          intervalLeft = setInterval(animationLoopToLeft, 15);
+          intervalRight = setInterval(animationLoopToRight, 15);
+        }
+    
+        // 리사이즈에 애니메이션 적용
+        setupAnimation();
+        window.addEventListener('resize', setupAnimation);
+      });
+    </script>
+    
+
     <script src="/script/footer.js"></script>
 </body>
 
