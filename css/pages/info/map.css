@@ -120,7 +120,7 @@ video {
   font-size: 17px;
   font-weight: 300;
   font-size: 100%;
-  color: #333D4C;
+  color: #333d4c;
   vertical-align: baseline;
   letter-spacing: -0.7px;
   box-sizing: border-box;
@@ -311,17 +311,26 @@ textarea::placeholder {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-bottom: 32px;
+}
+.map-info h4 {
+  display: flex;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .map-info h4 {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 .map-info .field {
-  display: flex;
-  align-items: center;
-  gap: 16px;
   font-size: 17px;
   font-weight: 500;
   line-height: 26px;
   color: #333d4c;
+  flex-shrink: 0;
 }
-.map-info .field span {
+.map-info span {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -330,7 +339,12 @@ textarea::placeholder {
   line-height: 26px;
   color: inherit;
 }
-.map-info .field span .subway {
+@media (max-width: 768px) {
+  .map-info span {
+    flex-wrap: wrap;
+  }
+}
+.map-info span .subway {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,15 +354,26 @@ textarea::placeholder {
   font-weight: 400;
   line-height: 18px;
   color: #fff;
+  flex-shrink: 0;
 }
-.map-info .field span .subway .line2 {
-  background-color: #47E915;
+.map-info span .subway.line2 {
+  background-color: #47e915;
 }
-.map-info .field span .subway .line5 {
-  background-color: #6832DB;
+.map-info span .subway.line5 {
+  background-color: #6832db;
 }
-.map-info .field span .subway .line9 {
-  background-color: #D8AD00;
+.map-info span .subway.line9 {
+  background-color: #d8ad00;
+}
+
+.map {
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .map {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=map.css.map */

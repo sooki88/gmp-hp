@@ -34,21 +34,33 @@
         </h2>
         <div class="map-container">
           <div class="map-info">
-            <h4 class="field">주소<span>서울 영등포구 당산로41길 11, W동 1301호 (당산 SK V1 center)</span></h4>
-            <h4 class="field">대표전화<span>1566-3588</span></h4>
-            <h4 class="field">FAX<span>070-0415-3738</span></h4>
-            <h4 class="field">찾아오시는 길<span><strong class="subway line2">2호선</strong><strong class="subway line9">9호선</strong>당산역 11번 출구에서 412m (도보 5분)</span><span><strong class="subway line2">2호선</strong><strong class="subway line5">5호선</strong>영등포구청역 3번 출구에서 595m (도보 8분)</span></h4>
+            <h4>
+              <p class="field">주소</p><span>서울 영등포구 당산로41길 11, W동 1301호 (당산 SK V1 center)</span>
+            </h4>
+            <h4>
+              <p class="field">대표전화</p><span>1566-3588</span>
+            </h4>
+            <h4>
+              <p class="field">FAX</p><span>070-0415-3738</span>
+            </h4>
+            <h4>
+              <p class="field">찾아오시는 길</p>
+              <span>
+                <strong class="subway line2">2호선</strong>
+                <strong class="subway line9">9호선</strong>
+                당산역 11번 출구에서 412m (도보 5분)
+              </span>
+              <span>
+                <strong class="subway line2">2호선</strong>
+                <strong class="subway line5">5호선</strong>
+                영등포구청역 3번 출구에서 595m (도보 8분)</span>
+            </h4>
           </div>
         </div>
 
-        <!-- * 카카오맵 - 지도퍼가기 -->
-<!-- 1. 지도 노드 -->
-<div id="daumRoughmapContainer1735367032607" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-
+        <!-- 지도 노드 -->
+        <div id="daumRoughmapContainer1735367032607" class="root_daum_roughmap root_daum_roughmap_landing map"></div>
       </div>
-
-     
     </main>
 
     <!-- 푸터영역 -->
@@ -56,21 +68,25 @@
 
     <script src="/script/header.js"></script>
 
-    <!--
-	2. 설치 스크립트
-	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
--->
-<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+    <!-- 카카오맵 -->
+    <script charset="UTF-8" class="daum_roughmap_loader_script"
+      src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
-<!-- 3. 실행 스크립트 -->
-<script charset="UTF-8">
-	new daum.roughmap.Lander({
-		"timestamp" : "1735367032607",
-		"key" : "2mn8u",
-		"mapWidth" : "1050",
-		"mapHeight" : "440"
-	}).render();
-</script>
+    <script charset="UTF-8">
+      function renderMap() {
+        const mapWidth = window.innerWidth <= 768 ? "100%" : "1050";
+        new daum.roughmap.Lander({
+          "timestamp": "1735367032607",
+          "key": "2mn8u",
+          "mapWidth": mapWidth,
+          "mapHeight": "440"
+        }).render();
+      }
+
+      renderMap();
+      window.addEventListener("resize", renderMap);
+    </script>
+
     <script src="/script/footer.js"></script>
 </body>
 

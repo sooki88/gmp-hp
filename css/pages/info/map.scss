@@ -3,70 +3,93 @@
 @use "../../helper/color";
 
 .page-title-container {
-    @include common.page-title-container;
-  }
-  
-  .content-container {
-    @include common.content-container;
-  }
-  
-  .section-container {
-    @include common.section-container;
-  }
+  @include common.page-title-container;
+}
 
-  .map-container {
+.content-container {
+  @include common.content-container;
+}
+
+.section-container {
+  @include common.section-container;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  width: 100%;
+}
+
+.map-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+
+  h4 {
     display: flex;
-    flex-direction: column;
-    gap: 56px;
-    width: 100%;
-  }
+    gap: 16px;
 
-  .map-info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    .field {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        font-size: 17px;
-        font-weight: 500;
-        line-height: 26px;
-        color: color.$gray100;
-
-        span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 17px;
-            font-weight: 300;
-            line-height: 26px;
-            color: inherit;
-
-            .subway {
-                display: flex;
-                align-items: center;  
-                justify-content: center;
-                padding: 2px 8px;
-                border-radius: 11px;
-                font-size: 12px;
-                font-weight: 400;
-                line-height: 18px;
-                color: color.$white;
-
-                .line2 {
-                    background-color: #47E915;
-                }
-
-                .line5 {
-                    background-color: #6832DB;
-                }
-
-                .line9 {
-                    background-color: #D8AD00;
-                }
-            }
-        }
+    @include common.toTablet {
+      flex-direction: column;
+      gap: 4px;
     }
   }
+
+  .field {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 26px;
+    color: color.$gray100;
+    flex-shrink: 0;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 26px;
+    color: inherit;
+
+    @include common.toTablet {
+      flex-wrap: wrap;
+    }
+
+    .subway {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 8px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: color.$white;
+      flex-shrink: 0;
+
+      &.line2 {
+        background-color: #47e915;
+      }
+
+      &.line5 {
+        background-color: #6832db;
+      }
+
+      &.line9 {
+        background-color: #d8ad00;
+      }
+    }
+  }
+}
+
+.map {
+  border-radius: 20px;
+  overflow: hidden;
+
+  @include common.toTablet {
+    width: 100%;
+  }
+}

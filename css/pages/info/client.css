@@ -120,7 +120,7 @@ video {
   font-size: 17px;
   font-weight: 300;
   font-size: 100%;
-  color: #333D4C;
+  color: #333d4c;
   vertical-align: baseline;
   letter-spacing: -0.7px;
   box-sizing: border-box;
@@ -299,11 +299,11 @@ textarea::placeholder {
     font-size: 18px;
   }
 }
-.tab-container li.clicked {
+.tab-container li.selected {
   font-weight: 500;
   color: #6832db;
 }
-.tab-container li.clicked::after {
+.tab-container li.selected::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -328,6 +328,9 @@ textarea::placeholder {
 }
 
 .client-container {
+  display: none;
+}
+.client-container.selected {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -336,7 +339,7 @@ textarea::placeholder {
   height: 100%;
 }
 @media (max-width: 768px) {
-  .client-container {
+  .client-container.selected {
     padding: 100px 24px;
     gap: 12px;
   }
@@ -374,6 +377,7 @@ textarea::placeholder {
     flex-wrap: wrap;
     gap: 12px;
     margin-left: 0 !important;
+    transform: translateX(0) !important;
   }
 }
 .client-container .client-list .client-item {
