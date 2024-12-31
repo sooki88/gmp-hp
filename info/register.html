@@ -1,0 +1,162 @@
+<!-- 가맹점 가입 신청 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>가맹점 가입 신청</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/api/assets/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/pages/info/register.css" />
+    <link rel="stylesheet" href="/css/components/header.css" />
+    <link rel="stylesheet" href="/css/components/footer.css" />
+</head>
+
+<body>
+    <div class="page">
+        <!-- 헤더 영억 -->
+        <div id="header-area"></div>
+
+        <!-- 상단 타이틀 배너 영역 -->
+        <div class="page-title-container">
+            <div>
+                굿모닝페이 가맹점 <br class="only-mobile" />가입 신청
+            </div>
+        </div>
+
+        <!-- 탭 영역-->
+        <ul class="tab-container">
+            <li class="tab-item selected">사업자(법인/개인)</li>
+            <li class="tab-item">개인판매자</li>
+        </ul>
+
+        <!-- 폼 영역 -->
+        <main class="content-container">
+            <!-- 사업자 폼 -->
+            <div class="form-container selected">
+                <div class="label-input-container">
+                    <label>사업자 구분<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <div class="radio-area">
+                        <label class="radio-box">
+                            <input name="businessType" type="radio" value="personal" checked />법인
+                        </label>
+                        <label class="radio-box">
+                            <input name="businessType" type="radio" value="corporate" />개인
+                        </label>
+                    </div>
+                </div>
+
+                <div class="label-input-container">
+                    <label>상호명(법인명)<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <input class="text-input" placeholder="상호명을 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container">
+                    <label>대표자 성명<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <input class="text-input" placeholder="대표자 성명을 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container">
+                    <label>연락처<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <input class="text-input" placeholder="휴대폰 번호를 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container">
+                    <label>홈페이지</label>
+                    <input class="text-input" placeholder="홈페이지를 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container">
+                    <label>이메일</label>
+                    <input class="text-input" placeholder="이메일 주소를 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container align-start">
+                    <label>문의사항<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <textarea class="textarea" placeholder="문의하실 내용을 입력해 주세요."></textarea>
+                </div>
+
+                <div class="term-container">
+                    <label class="terms-chk">
+                        <input type="checkbox" class="check-box" />
+                        개인정보처리방침에 동의해요.
+                    </label>
+                    <button class="view-terms-btn" tpye="button">
+                        <img src="/images/chevron-right-gry.svg" alt="약관 자세히 보기" />
+                    </button>
+                </div>
+
+                <button class="submit-btn">신청하기</button>
+            </div>
+
+            <!-- 개인판매자 폼 -->
+            <div class="form-container">
+                <div class="label-input-container">
+                    <label>성명<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <input class="text-input" placeholder="성명을 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container">
+                    <label>연락처<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <input class="text-input" placeholder="휴대폰 번호를 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container">
+                    <label>홈페이지</label>
+                    <input class="text-input" placeholder="홈페이지를 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container">
+                    <label>이메일</label>
+                    <input class="text-input" placeholder="이메일 주소를 입력해 주세요." />
+                </div>
+
+                <div class="label-input-container align-start">
+                    <label>문의사항<img src="/images/check-org.svg" alt="필수 체크 아이콘" /></label>
+                    <textarea class="textarea" placeholder="문의하실 내용을 입력해 주세요."></textarea>
+                </div>
+
+                <div class="term-container">
+                    <label class="terms-chk">
+                        <input type="checkbox" class="check-box" />
+                        개인정보처리방침에 동의해요.
+                    </label>
+                    <button class="view-terms-btn" tpye="button">
+                        <img src="/images/chevron-right-gry.svg" alt="약관 자세히 보기" />
+                    </button>
+                </div>
+
+                <button class="submit-btn">신청하기</button>
+            </div>
+        </main>
+
+
+
+        <!-- 푸터영역 -->
+        <div id="footer-area"></div>
+
+        <script src="/script/header.js"></script>
+
+        <!-- 탭 클릭 -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const tabItems = document.querySelectorAll(".tab-item");
+                const formContainer = document.querySelectorAll(".form-container");
+
+                tabItems.forEach((tab, index) => {
+                    tab.addEventListener("click", () => {
+                        tabItems.forEach((item) => item.classList.remove("selected"));
+                        formContainer.forEach((form) => form.classList.remove("selected"));
+
+                        tab.classList.add("selected");
+                        formContainer[index].classList.add("selected");
+                    })
+                })
+            })
+        </script>
+
+        <script src="/script/footer.js"></script>
+    </div>
+</body>
+
+</html>

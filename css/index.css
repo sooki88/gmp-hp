@@ -217,6 +217,9 @@ textarea::placeholder {
  page 레이아웃
 */
 /**
+ 폼 스타일 (관련 페이지: 가맹점 가입 신청, 업무제휴 신청)
+*/
+/**
  버튼 스타일
 */
 /**
@@ -234,7 +237,6 @@ textarea::placeholder {
 .page {
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-width: 100%;
   min-height: 100vh;
 }

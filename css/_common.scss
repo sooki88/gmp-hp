@@ -31,7 +31,6 @@
 @mixin page {
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-width: 100%;
   min-height: 100vh;
 }
@@ -110,6 +109,142 @@
 }
 
 /**
+ 폼 스타일 (관련 페이지: 가맹점 가입 신청, 업무제휴 신청)
+*/
+@mixin form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 513px;
+
+  @include toTablet {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .label-input-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include toTablet {
+      flex-direction: column;
+      gap: 8px;
+      justify-content: start;
+    }
+
+    &.align-start {
+      align-items: start;
+
+      label {
+        margin-top: 12px;
+
+        @include toTablet {
+          margin-top: 0;
+        }
+      }
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 150%;
+      color: color.$black;
+    }
+
+    .text-input {
+      box-sizing: border-box;
+      width: 360px;
+      height: 48px;
+      padding: 11px 16px;
+      border: 1px solid color.$gray40;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: color.$black;
+
+      @include toTablet {
+        width: 100%;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        color: color.$gray40;
+      }
+    }
+
+    .textarea {
+      box-sizing: border-box;
+      width: 360px;
+      height: 144px;
+      padding: 11px 16px;
+      overflow-y: auto;
+      border: 1px solid color.$gray40;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: color.$black;
+      resize: none;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        color: color.$gray40;
+      }
+
+      @include toTablet {
+        width: 100%;
+      }
+    }
+  }
+
+  .radio-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 360px;
+
+    .radio-box {
+      @include radio-box;
+    }
+  }
+
+  .term-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .terms-chk {
+      @include main-check-box;
+    }
+
+    .view-terms-btn {
+      img {
+        width: 16px;
+        height: 16px;
+        margin-right: -4px;
+      }
+    }
+  }
+
+  .submit-btn {
+    @include button-basic;
+
+    & {
+      margin-top: 14px;
+    }
+  }
+}
+
+/**
  버튼 스타일
 */
 @mixin button-basic {
@@ -122,8 +257,8 @@
   color: color.$white;
 
   &:hover {
-    background-color: color.$primary20;
-    color: color.$primary80;
+    background-color: color.$primary80;
+    color: color.$primary20;
     box-shadow: 0px 4px 8px 0px rgba(55, 28, 115, 0.16);
   }
 
@@ -171,52 +306,45 @@
 /**
  체크박스 스타일
 */
-@mixin main-check-box(
-  $font-weight: 400,
-  $check-box-img: "../../assets/images/check_box.png",
-  $hover-color: $color-gray10
-) {
+@mixin main-check-box {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.6rem;
+  gap: 8px;
   cursor: pointer;
-  font-weight: $font-weight;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 150%;
 
-  input[type="checkbox"],
-  input[type="radio"] {
+  input {
     cursor: pointer;
-    width: 1.6rem;
+    width: 24px;
+    height: 24px;
     appearance: none;
-    height: 1.6rem;
   }
 
-  input[type="checkbox"]:before,
-  input[type="radio"]:before {
+  input:before {
     content: "";
     display: block;
-    width: 1.6rem;
-    height: 1.6rem;
-    background-image: url(#{$check-box-img});
+    width: 24px;
+    height: 24px;
+    background-image: url("/images/check-square-off.svg");
     background-size: 100% 100%;
   }
-  input[type="checkbox"]:checked:before,
-  input[type="radio"]:checked:before {
-    background-image: url("../../assets/images/check_box_on.png");
+  input:checked:before {
+    background-image: url("/images/check-square-on.svg");
     background-size: 100% 100%;
   }
 
-  &:active > input[type="checkbox"]:before,
-  &:active > input[type="radio"]:before {
-    background-color: $color-gray30;
-    border-radius: 0.4rem;
+  &:active > input:before {
+    background-color: color.$gray30;
+    border-radius: 4px;
   }
 
   @media (hover: hover) {
-    &:hover > input[type="checkbox"]:before,
-    &:hover > input[type="radio"]:before {
-      background-color: $hover-color;
+    &:hover > input:before {
+      background-color: color.$gray10;
     }
   }
 }
@@ -224,16 +352,15 @@
 /**
    라디오버튼 스타일
   */
-@mixin radio-box() {
+@mixin radio-box {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.6rem;
+  gap: 6px;
   cursor: pointer;
 
-  input[type="radio"],
-  input[type="checkbox"] {
+  input {
     cursor: pointer;
     width: 1.6rem;
     height: 1.6rem;
@@ -241,39 +368,35 @@
     margin: 0;
   }
 
-  input[type="radio"]:before,
-  input[type="checkbox"]:before {
+  input:before {
     position: absolute;
     left: 0;
     content: "";
     display: block;
     width: 1.6rem;
     height: 1.6rem;
-    background-image: url("../../assets/images/i_radio.png");
+    background-image: url("/images/radio-off.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
 
-  input[type="radio"]:checked:before,
-  input[type="checkbox"]:checked:before {
-    background-image: url("../../assets/images/i_radio_on.png");
+  input:checked:before {
+    background-image: url("/images/radio-on.svg");
   }
 
-  input[type="radio"]:disabled,
-  input[type="checkbox"]:disabled {
+  input:disabled {
     cursor: default;
   }
 
-  &:active > input[type="checkbox"]:before,
-  &:active > input[type="radio"]:before {
-    background-color: $color-gray10;
+  &:active > input:before {
+    background-color: color.$gray10;
     border-radius: 50%;
   }
 
   @media (hover: hover) {
     &:hover > input[type="checkbox"]:before,
     &:hover > input[type="radio"]:before {
-      background-color: $color-gray10;
+      background-color: color.$gray10;
       border-radius: 50%;
     }
   }

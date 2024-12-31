@@ -1,0 +1,47 @@
+@use "../../reset";
+@use "../../common" as common;
+@use "../../helper/color";
+
+.page-title-container {
+  @include common.page-title-container;
+
+  & {
+    // background-color: color.$white;
+    div {
+      justify-content: center;
+    }
+  }
+}
+
+.tab-container {
+  @include common.tab-container;
+}
+
+.content-container {
+  @include common.content-container;
+
+  & {
+    padding-top: 56px;
+    align-items: center;
+  }
+}
+
+.form-container {
+  @include common.form-container;
+
+  & {
+    display: none;
+
+    &.selected {
+      display: flex;
+    }
+  }
+}
+
+.only-mobile {
+  display: none;
+
+  @media (max-width: 440px) {
+    display: block;
+  }
+}
