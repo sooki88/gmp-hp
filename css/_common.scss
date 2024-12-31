@@ -76,9 +76,11 @@
     width: 100%;
     max-width: 1050px;
     font-size: 44px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 140%;
     text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 
     @include toTablet {
       flex-direction: column;
@@ -405,7 +407,7 @@
 /**
    테이블 스타일
   */
-@mixin table() {
+@mixin table($column: 50%) {
   width: 100%;
   box-sizing: border-box;
   border-collapse: collapse;
@@ -423,7 +425,8 @@
     }
 
     th {
-      width: 50%;
+      // width: 50%;
+      width: $column;
       font-size: 18px;
       font-weight: 300;
       line-height: 28px;
@@ -452,6 +455,12 @@
   tbody {
     height: auto;
 
+    tr {
+      &:last-child td {
+        border-bottom: 1px solid color.$primary70;
+      }
+    }
+
     td {
       padding: 16px;
       text-align: center;
@@ -460,7 +469,8 @@
       line-height: 26px;
       color: color.$black;
       border-right: 1px solid color.$gray40;
-      border-bottom: 1px solid color.$primary70;
+      border-bottom: 1px solid color.$gray40;
+      // border-bottom: 1px solid color.$primary70;
 
       @include toTablet {
         font-size: 16px;

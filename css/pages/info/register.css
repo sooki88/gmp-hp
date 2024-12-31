@@ -255,9 +255,11 @@ textarea::placeholder {
   width: 100%;
   max-width: 1050px;
   font-size: 44px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 140%;
   text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 @media (max-width: 768px) {
   .page-title-container div {

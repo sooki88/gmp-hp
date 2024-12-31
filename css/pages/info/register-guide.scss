@@ -12,6 +12,14 @@
 
 .section-container {
   @include common.section-container;
+
+  .footnote {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 150%;
+    color: color.$gray80;
+    margin-top: -12px;
+  }
 }
 
 .step-container {

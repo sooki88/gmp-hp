@@ -1,0 +1,56 @@
+@use "../../reset";
+@use "../../common" as common;
+@use "../../helper/color";
+
+.page-title-container {
+  @include common.page-title-container;
+}
+
+.content-container {
+  @include common.content-container;
+}
+
+.section-container {
+  @include common.section-container;
+
+  .footnote {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 150%;
+    color: color.$gray80;
+    margin-top: -12px;
+  }
+}
+
+.document-table {
+  .td-img {
+    display: block;
+    margin: 16px auto 2px;
+  }
+
+  &.only-pc {
+    display: table;
+
+    &:nth-child(1) {
+      @include common.table;
+    }
+
+    &:nth-child(2) {
+      @include common.table(33.33%);
+    }
+
+    @include common.toTablet {
+      display: none;
+    }
+  }
+
+  &.only-toTablet {
+    display: none;
+
+    @include common.toTablet {
+      @include common.table;
+      display: table;
+      width: 100%;
+    }
+  }
+}
