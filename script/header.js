@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "/info/client.html",
         "/info/register.html",
       ];
-      const darkPaths = ["/info/brand.html", "/pay", "/support"];
+      const darkPaths = ["/info/brand.html", "/pay.html", "/support"];
 
       const setHeaderStyle = (path, isScrolled) => {
         // 현재 페이지가 ligthPath일 경우
