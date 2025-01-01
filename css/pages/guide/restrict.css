@@ -1,0 +1,481 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+menu,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Pretendard";
+  font-size: 17px;
+  font-weight: 300;
+  font-size: 100%;
+  color: #333d4c;
+  vertical-align: baseline;
+  letter-spacing: -0.7px;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  /*content: '';*/
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a,
+button,
+select,
+input[type=button] {
+  cursor: pointer;
+  outline: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+input,
+button {
+  outline: none;
+  letter-spacing: -0.7px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  font-weight: 300;
+  letter-spacing: -0.7px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/**
+ page 레이아웃
+*/
+/**
+ 폼 스타일 (관련 페이지: 가맹점 가입 신청, 업무제휴 신청)
+*/
+/**
+ 버튼 스타일
+*/
+/**
+ 체크박스 스타일
+*/
+/**
+   라디오버튼 스타일
+  */
+/**
+   테이블 스타일
+  */
+/**
+   탭 스타일
+  */
+.page-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #f5f7fa;
+  padding: 166px 0 96px;
+}
+@media (max-width: 768px) {
+  .page-title-container {
+    padding: 126px 24px 64px;
+  }
+}
+.page-title-container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1050px;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (max-width: 768px) {
+  .page-title-container div {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 36px;
+    line-height: 150%;
+  }
+}
+.page-title-container div p {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  width: 100%;
+  max-width: 1050px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 140px 0;
+}
+@media (max-width: 768px) {
+  .content-container {
+    padding: 100px 24px;
+    gap: 100px;
+  }
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+.section-container h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+  color: #333d4c;
+}
+.section-container .footnote {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 150%;
+  color: #ff342e;
+  margin-top: -12px;
+}
+.section-container .footnote img {
+  width: 24px;
+  height: 24px;
+}
+
+.document-table .td-img {
+  display: block;
+  margin: 16px auto 2px;
+}
+.document-table.only-pc {
+  width: 100%;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  display: table;
+}
+.document-table.only-pc thead {
+  text-align: center;
+  background-color: #6832db;
+}
+.document-table.only-pc thead tr {
+  height: 52px;
+}
+@media (max-width: 768px) {
+  .document-table.only-pc thead tr {
+    height: 48px;
+  }
+}
+.document-table.only-pc thead th {
+  width: 50%;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .document-table.only-pc thead th {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+.document-table.only-pc thead th:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.document-table.only-pc thead th:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.document-table.only-pc tbody {
+  height: auto;
+}
+.document-table.only-pc tbody tr:last-child td {
+  border-bottom: 1px solid #6832db;
+}
+.document-table.only-pc tbody td {
+  padding: 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 17px;
+  line-height: 26px;
+  color: #000;
+  border-right: 1px solid #cfd7e5;
+  border-bottom: 1px solid #cfd7e5;
+}
+@media (max-width: 768px) {
+  .document-table.only-pc tbody td {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+.document-table.only-pc tbody td:last-child {
+  border-right: 0;
+}
+.document-table.only-pc tbody td {
+  vertical-align: baseline;
+}
+@media (max-width: 768px) {
+  .document-table.only-pc {
+    display: none;
+  }
+}
+.document-table.only-toTablet {
+  display: none;
+}
+@media (max-width: 768px) {
+  .document-table.only-toTablet {
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+  }
+  .document-table.only-toTablet thead {
+    text-align: center;
+    background-color: #6832db;
+  }
+  .document-table.only-toTablet thead tr {
+    height: 52px;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .document-table.only-toTablet thead tr {
+    height: 48px;
+  }
+}
+@media (max-width: 768px) {
+  .document-table.only-toTablet thead th {
+    width: 50%;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .document-table.only-toTablet thead th {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .document-table.only-toTablet thead th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .document-table.only-toTablet thead th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .document-table.only-toTablet tbody {
+    height: auto;
+  }
+  .document-table.only-toTablet tbody tr:last-child td {
+    border-bottom: 1px solid #6832db;
+  }
+  .document-table.only-toTablet tbody td {
+    padding: 16px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 17px;
+    line-height: 26px;
+    color: #000;
+    border-right: 1px solid #cfd7e5;
+    border-bottom: 1px solid #cfd7e5;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .document-table.only-toTablet tbody td {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .document-table.only-toTablet tbody td:last-child {
+    border-right: 0;
+  }
+}
+
+/*# sourceMappingURL=restrict.css.map */
