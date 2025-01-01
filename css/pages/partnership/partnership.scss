@@ -1,0 +1,161 @@
+@use "../../reset";
+@use "../../common" as common;
+@use "../../helper/color";
+
+.page {
+  @include common.page;
+}
+
+.page-title-container {
+  @include common.page-title-container;
+}
+
+.content-container {
+  @include common.content-container;
+}
+
+.company-section-container {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+
+  @include common.toTablet {
+    flex-direction: column;
+  }
+
+  h2 {
+    width: 246px;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 140%;
+
+    @include common.toTablet {
+      width: 100%;
+    }
+
+    strong {
+      display: inline;
+      font-weight: 500;
+    }
+  }
+
+  p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 150%;
+  }
+}
+
+.checklist-section-container {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+
+  @include common.toTablet {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    flex-shrink: 0;
+    width: 246px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+
+    @include common.toTablet {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }
+
+  .check-item-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 18px 30px 18px 42px;
+    gap: 12px;
+    border: 1px solid color.$primary70;
+    border-radius: 8px 20px 20px 20px;
+
+    @include common.toTablet {
+      width: 100%;
+      border-radius: 8px 12px 12px 12px;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px 0 8px 0;
+    }
+
+    .check-point {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 150%;
+      color: color.$primary70;
+    }
+
+    .check-des {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 26px;
+      color: color.$gray100;
+
+      @include common.toTablet {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+.only-pc {
+  display: block;
+
+  @include common.toTablet {
+    display: none;
+  }
+}
+
+.partnership-banner-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 0;
+  background-image: url("/images/banner_\ partnership.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 300;
+  color: color.$white;
+  text-align: center;
+
+  @include common.toTablet {
+    border-radius: 12px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  a {
+    @include common.button-basic;
+    @include common.button-outline;
+
+    color: color.$white !important;
+  }
+
+  .enter {
+    display: none;
+
+    @media (max-width: 490px) {
+      display: block;
+    }
+  }
+}

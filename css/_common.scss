@@ -294,6 +294,7 @@
 
 @mixin button-outline {
   border: solid 0.7px color.$white;
+  color: inherit;
 }
 
 @mixin button-unimportant {
