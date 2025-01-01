@@ -12,10 +12,6 @@
   }
 }
 
-.tab-container {
-  @include common.tab-container;
-}
-
 .content-container {
   @include common.content-container;
 
@@ -28,12 +24,8 @@
 .form-container {
   @include common.form-container;
 
-  & {
-    display: none;
-
-    &.selected {
-      display: flex;
-    }
+  .select-container {
+    @include common.select-container;
   }
 }
 

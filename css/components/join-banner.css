@@ -220,6 +220,9 @@ textarea::placeholder {
  폼 스타일 (관련 페이지: 가맹점 가입 신청, 업무제휴 신청)
 */
 /**
+ 선택박스(드롭다운) 스타일
+*/
+/**
  버튼 스타일
 */
 /**
@@ -314,6 +317,7 @@ textarea::placeholder {
   color: #fff;
   border: solid 0.7px #fff;
   color: inherit;
+  color: #fff;
 }
 .contact-banner .join-button:hover {
   background-color: #4b19b2;

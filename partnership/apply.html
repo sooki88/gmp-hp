@@ -1,0 +1,140 @@
+<!-- 업무제휴 신청 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>업무제휴 신청</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/api/assets/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/pages/partnership/apply.css" />
+    <link rel="stylesheet" href="/css/components/header.css" />
+    <link rel="stylesheet" href="/css/components/footer.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- 헤더 영억 -->
+      <div id="header-area"></div>
+
+      <!-- 상단 타이틀 배너 영역 -->
+      <div class="page-title-container">
+        <div>굿모닝페이 <br class="only-mobile" />업무제휴 신청</div>
+      </div>
+
+      <!-- 폼 영역 -->
+      <main class="content-container">
+        <!-- 사업자 폼 -->
+        <div class="form-container">
+          <div class="label-input-container">
+            <label
+              >사업 형태<img src="/images/check-org.svg" alt="필수 체크 아이콘"
+            /></label>
+            <select class="select-container">
+              <option value="" disabled selected>
+                사업형태를 선택해 주세요.
+              </option>
+              <option value="van">VAN채널</option>
+              <option value="delivery">배달대행</option>
+              <option value="online">온라인 매장용 솔루션 제공</option>
+              <option value="offline">오프라인 매장용 솔루션 제공</option>
+              <option value="etc">기타</option>
+            </select>
+          </div>
+
+          <div class="label-input-container">
+            <label
+              >상호명(법인명)<img
+                src="/images/check-org.svg"
+                alt="필수 체크 아이콘"
+            /></label>
+            <input class="text-input" placeholder="상호명을 입력해 주세요." />
+          </div>
+
+          <div class="label-input-container">
+            <label
+              >대표자 성명<img
+                src="/images/check-org.svg"
+                alt="필수 체크 아이콘"
+            /></label>
+            <input
+              class="text-input"
+              placeholder="대표자 성명을 입력해 주세요."
+            />
+          </div>
+
+          <div class="label-input-container">
+            <label
+              >연락처<img src="/images/check-org.svg" alt="필수 체크 아이콘"
+            /></label>
+            <input
+              class="text-input"
+              placeholder="휴대폰 번호를 입력해 주세요."
+            />
+          </div>
+
+          <div class="label-input-container">
+            <label>홈페이지</label>
+            <input class="text-input" placeholder="홈페이지를 입력해 주세요." />
+          </div>
+
+          <div class="label-input-container">
+            <label>이메일</label>
+            <input
+              class="text-input"
+              placeholder="이메일 주소를 입력해 주세요."
+            />
+          </div>
+
+          <div class="label-input-container align-start">
+            <label
+              >문의사항<img src="/images/check-org.svg" alt="필수 체크 아이콘"
+            /></label>
+            <textarea
+              class="textarea"
+              placeholder="문의하실 내용을 입력해 주세요."
+            ></textarea>
+          </div>
+
+          <div class="term-container">
+            <label class="terms-chk">
+              <input type="checkbox" class="check-box" />
+              개인정보처리방침에 동의해요.
+            </label>
+            <button class="view-terms-btn" tpye="button">
+              <img src="/images/chevron-right-gry.svg" alt="약관 자세히 보기" />
+            </button>
+          </div>
+
+          <button class="submit-btn">신청하기</button>
+        </div>
+      </main>
+
+      <!-- 푸터영역 -->
+      <div id="footer-area"></div>
+
+      <script src="/script/header.js"></script>
+
+      <!-- 탭 클릭 -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const tabItems = document.querySelectorAll(".tab-item");
+          const formContainer = document.querySelectorAll(".form-container");
+
+          tabItems.forEach((tab, index) => {
+            tab.addEventListener("click", () => {
+              tabItems.forEach((item) => item.classList.remove("selected"));
+              formContainer.forEach((form) =>
+                form.classList.remove("selected")
+              );
+
+              tab.classList.add("selected");
+              formContainer[index].classList.add("selected");
+            });
+          });
+        });
+      </script>
+
+      <script src="/script/footer.js"></script>
+    </div>
+  </body>
+</html>

@@ -77,6 +77,8 @@
   .join-button {
     @include common.button-basic;
     @include common.button-outline;
+
+    color: color.$white;
   }
 }
 
