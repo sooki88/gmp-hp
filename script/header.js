@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "/info/client.html",
         "/info/register.html",
         "/guide/document.html",
+        "/guide/insurance.html",
       ];
       const darkPaths = ["/info/brand.html", "/pay.html", "/support"];
 

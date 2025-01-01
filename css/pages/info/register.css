@@ -544,7 +544,7 @@ textarea::placeholder {
 .form-container .submit-btn:hover {
   background-color: #4b19b2;
   color: #f0eef9;
-  box-shadow: 0px 4px 8px 0px rgba(55, 28, 115, 0.16);
+  box-shadow: 0px 4px 8px 0px rgba(55, 28, 115, 0.06);
 }
 .form-container .submit-btn:disabled {
   background-color: #f1f4fb;

@@ -1,0 +1,148 @@
+@use "../../reset";
+@use "../../common" as common;
+@use "../../helper/color";
+
+.page-title-container {
+  @include common.page-title-container;
+}
+
+.content-container {
+  @include common.content-container;
+}
+
+.section-container {
+  @include common.section-container;
+
+  .insurance-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+
+    @include common.toTablet {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .insurance-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      height: 160px;
+      padding: 32px 40px;
+      border-radius: 20px;
+      background-color: color.$gray10;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 28px;
+
+      @include common.toTablet {
+        padding: 32px 24px;
+        border-radius: 12px;
+        height: 148px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+      }
+
+      img {
+        position: absolute;
+        bottom: 20px;
+        right: 35px;
+        width: 56px;
+        height: 56px;
+
+        @include common.toTablet {
+          right: 24px;
+        }
+      }
+
+      .risk-check-btn {
+        @include common.button-basic;
+        @include common.button-unimportant;
+
+        & {
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  .footnote {
+    display: flex;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 150%;
+    color: color.$error;
+    margin-top: -12px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.insurance-company {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  width: fit-content;
+  padding: 32px 40px;
+  border: 1px solid color.$primary70;
+  border-radius: 20px;
+
+  @include common.toTablet {
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+    width: 100%;
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
+
+  .company {
+    width: 240px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 20px;
+
+    @include common.toTablet {
+      font-size: 18px;
+    }
+  }
+
+  .icon-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.insurance-company-des {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 150%;
+
+  p {
+    letter-spacing: 0;
+
+    b {
+      color: color.$gray60;
+    }
+  }
+}

@@ -234,77 +234,124 @@ textarea::placeholder {
 /**
    탭 스타일
   */
-.contact-banner {
+.page-title-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  height: 206px;
   width: 100%;
-  padding: 0 24px;
-  background-image: url("../../images/join-banner.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 140%;
-  color: white;
-  text-align: center;
+  background-color: #f5f7fa;
+  padding: 166px 0 96px;
 }
 @media (max-width: 768px) {
-  .contact-banner {
-    font-size: 20px;
-    line-height: 30px;
+  .page-title-container {
+    padding: 126px 24px 64px;
   }
 }
-@media (max-width: 530px) {
-  .contact-banner {
-    height: 100%;
-    padding: 32px 24px;
-    gap: 16px;
-  }
-}
-.contact-banner .phone-button-container {
+.page-title-container div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 520px;
+  width: 100%;
+  max-width: 1050px;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (max-width: 768px) {
+  .page-title-container div {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 36px;
+    line-height: 150%;
+  }
+}
+.page-title-container div p {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  width: 100%;
+  max-width: 1050px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 140px 0;
+}
+@media (max-width: 768px) {
+  .content-container {
+    padding: 100px 24px;
+    gap: 100px;
+  }
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   width: 100%;
 }
-@media (max-width: 530px) {
-  .contact-banner .phone-button-container {
+.section-container h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+  color: #333d4c;
+}
+.section-container .insurance-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .section-container .insurance-list {
     flex-direction: column;
     gap: 16px;
   }
 }
-.contact-banner .phone-wrap {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.contact-banner .phone-wrap img {
-  width: 40px;
-  height: 40px;
-}
-.contact-banner .phone-wrap h3 {
+.section-container .insurance-list .insurance-item {
+  position: relative;
   display: flex;
   flex-direction: column;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 140%;
-  color: white;
-  text-align: left;
-}
-.contact-banner .phone-wrap h3 span {
-  font-size: 12px;
+  gap: 24px;
+  width: 100%;
+  height: 160px;
+  padding: 32px 40px;
+  border-radius: 20px;
+  background-color: #f5f7fa;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 150%;
-  color: white;
+  line-height: 28px;
 }
-.contact-banner .join-button {
+@media (max-width: 768px) {
+  .section-container .insurance-list .insurance-item {
+    padding: 32px 24px;
+    border-radius: 12px;
+    height: 148px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+  }
+}
+.section-container .insurance-list .insurance-item img {
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+  width: 56px;
+  height: 56px;
+}
+@media (max-width: 768px) {
+  .section-container .insurance-list .insurance-item img {
+    right: 24px;
+  }
+}
+.section-container .insurance-list .insurance-item .risk-check-btn {
   padding: 12px 20px;
   border-radius: 8px;
   background-color: #6832db;
@@ -312,27 +359,98 @@ textarea::placeholder {
   font-weight: 500;
   line-height: 24px;
   color: #fff;
-  border: solid 0.7px #fff;
+  background-color: #e5eaf2;
+  color: #333d4c;
 }
-.contact-banner .join-button:hover {
+.section-container .insurance-list .insurance-item .risk-check-btn:hover {
   background-color: #4b19b2;
   color: #f0eef9;
   box-shadow: 0px 4px 8px 0px rgba(55, 28, 115, 0.06);
 }
-.contact-banner .join-button:disabled {
+.section-container .insurance-list .insurance-item .risk-check-btn:disabled {
   background-color: #f1f4fb;
   color: #cfd7e5;
   cursor: not-allowed;
   pointer-events: none;
 }
-
-.only-mobile {
-  display: none;
+.section-container .insurance-list .insurance-item .risk-check-btn:hover {
+  background-color: #cfd7e5;
+  color: #333d4c;
 }
-@media (max-width: 530px) {
-  .only-mobile {
-    display: block;
+.section-container .insurance-list .insurance-item .risk-check-btn {
+  width: fit-content;
+}
+.section-container .footnote {
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 150%;
+  color: #ff342e;
+  margin-top: -12px;
+}
+.section-container .footnote img {
+  width: 24px;
+  height: 24px;
+}
+
+.insurance-company {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  width: fit-content;
+  padding: 32px 40px;
+  border: 1px solid #6832db;
+  border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .insurance-company {
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+    width: 100%;
+    padding: 32px 24px;
+    border-radius: 12px;
   }
 }
+.insurance-company .company {
+  width: 240px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .insurance-company .company {
+    font-size: 18px;
+  }
+}
+.insurance-company .icon-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+.insurance-company .icon-text img {
+  width: 24px;
+  height: 24px;
+}
 
-/*# sourceMappingURL=join-banner.css.map */
+.insurance-company-des {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 150%;
+}
+.insurance-company-des p {
+  letter-spacing: 0;
+}
+.insurance-company-des p b {
+  color: #6d7687;
+}
+
+/*# sourceMappingURL=insurance.css.map */
